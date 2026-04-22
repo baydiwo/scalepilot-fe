@@ -1,0 +1,13 @@
+# Agent Rules
+
+1. **State Management**: Always use **TanStack Query** (React Query) for server state management, caching, and data fetching. Avoid using local state or complex state management libraries for server data.
+2. **Naming Conventions**: Follow default recommended naming conventions:
+   - Components: `PascalCase.tsx`
+   - Pages/Routes: `page.tsx`, `layout.tsx` (Next.js App Router standard)
+   - Hooks: `useCamelCase.ts`
+3. **Verification**: Always run `npm run check` (which performs linting and type checking) after finishing each task to ensure code quality and prevent build errors.
+4. **Styling**:
+   - Do NOT use hardcoded inline styles.
+   - Always use **Tailwind CSS** for all UI styling.
+   - Use design tokens and utility classes consistently.
+5. **Quality Standards**: Maintain high accessibility (ARIA labels) and SEO best practices.
