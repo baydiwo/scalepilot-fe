@@ -255,7 +255,13 @@ export default function PricingPage() {
                </div>
                
                <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-white shadow-2xl relative z-10">
-                  <Image src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80" alt="Founder" fill className="object-cover" />
+                  <Image 
+                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=400&q=80" 
+                    alt="Founder" 
+                    fill 
+                    sizes="192px"
+                    className="object-cover" 
+                  />
                </div>
                
                {/* Grid background effect */}
@@ -391,7 +397,13 @@ export default function PricingPage() {
             <div className="flex-1 relative w-full aspect-video md:aspect-auto md:h-[500px]">
                {/* Visual composition mimicking Figma */}
                <div className="absolute inset-0 bg-zinc-900 rounded-3xl border border-white/10 overflow-hidden shadow-2xl">
-                  <Image src="https://images.unsplash.com/photo-1551288049-bbbda5366a7a?auto=format&fit=crop&w=800&q=80" alt="Dashboard" fill className="object-cover opacity-50" />
+                  <Image 
+                    src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" 
+                    alt="Dashboard" 
+                    fill 
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover opacity-50" 
+                  />
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
                   
                   {/* Floating pills */}
