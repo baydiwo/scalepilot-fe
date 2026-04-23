@@ -227,7 +227,7 @@ export default function PricingPage() {
             <div className="inline-block bg-primary/10 text-primary text-xs font-bold tracking-widest uppercase px-3 py-1 rounded-sm mb-4">
               Pricing
             </div>
-            <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-6">
+            <h1 className="text-5xl md:text-6xl font-black leading-none tracking-tight mb-6">
               Simple <span className="text-primary underline decoration-4 underline-offset-8">pricing</span> based on your needs, upgrade as you grows.
             </h1>
           </div>
