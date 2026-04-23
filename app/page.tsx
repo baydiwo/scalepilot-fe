@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white text-zinc-900 font-sans flex flex-col relative overflow-hidden">
+    <div className="min-h-screen bg-white text-zinc-900 flex flex-col relative overflow-hidden">
       {/* Grid background effect */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'linear-gradient(#15CB72 1.5px, transparent 1.5px), linear-gradient(90deg, #15CB72 1.5px, transparent 1.5px)', backgroundSize: '40px 40px' }} />
       
@@ -40,7 +40,7 @@ export default function Home() {
             Something Big is Coming
           </div>
           
-          <h1 className="text-6xl md:text-8xl font-black leading-tight tracking-tight mb-8">
+          <h1 className="text-6xl md:text-8xl font-black leading-none tracking-tight mb-8">
             The future of <span className="text-primary italic">scaling</span> is agentic.
           </h1>
           
