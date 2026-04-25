@@ -15,8 +15,32 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "ScalePilot - Agentic Scaling Platform",
-  description: "AI-powered scaling for your business operations.",
+  title: "ScalePilot | Decision Engine for Meta Ads",
+  description: "ScalePilot is the real-time verdict engine for Meta Ads. Scale winners instantly and stop losers before they burn your profits.",
+  icons: {
+    icon: "/scalepilot.svg",
+  },
+  openGraph: {
+    title: "ScalePilot | Decision Engine for Meta Ads",
+    description: "ScalePilot is the real-time verdict engine for Meta Ads. Scale winners instantly and stop losers before they burn your profits.",
+    url: "https://www.scalepilot.id",
+    siteName: "ScalePilot",
+    images: [
+      {
+        url: "/scalepilot.png",
+        width: 1200,
+        height: 630,
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "ScalePilot | Decision Engine for Meta Ads",
+    description: "ScalePilot is the real-time verdict engine for Meta Ads. Scale winners instantly and stop losers before they burn your profits.",
+    images: ["/scalepilot.png"],
+  },
 };
 
 export default function RootLayout({
@@ -30,7 +54,9 @@ export default function RootLayout({
       className={`${instrumentSans.variable} ${instrumentSans.className} ${geistMono.variable} h-full antialiased`}
     >
       <body className={`${instrumentSans.className} ${instrumentSans.variable} min-h-full flex flex-col`}>
-        <Providers>{children}</Providers>
+        <Providers>
+          {children}
+        </Providers>
       </body>
     </html>
   );
