@@ -150,8 +150,9 @@ const TheNav: React.FC = () => {
 
           <div className="flex items-center gap-4">
              <div className="hidden sm:flex items-center gap-2">
-                <a href="https://app.scalepilot.id" className="hover:bg-n100 hover:text-white border border-n20 h-11 text-sm lg:text-[15px] px-5 py-2 font-semibold transition-colors flex items-center">Log in</a>
-                <a href="https://app.scalepilot.id" className="h-11 hover:bg-n100 hover:text-white px-5 py-2 text-sm lg:text-base font-semibold bg-brand text-n100 transition-all flex items-center">Start free</a>
+                {/* <Link href="https://app.scalepilot.id" className="hover:bg-n100 hover:text-white border border-n20 h-11 text-sm lg:text-[15px] px-5 py-2 font-semibold transition-colors flex items-center">Log in</Link>
+                <Link href="https://app.scalepilot.id" className="h-11 hover:bg-n100 hover:text-white px-5 py-2 text-sm lg:text-base font-semibold bg-brand text-n100 transition-all flex items-center">Start free</Link> */}
+                <Link href="/pricing" className="h-11 hover:bg-n100 hover:text-white px-5 py-2 text-sm lg:text-base font-semibold bg-brand text-n100 transition-all flex items-center">See Pricing &rarr;</Link>
              </div>
              <button className="lg:hidden p-2 text-n100 focus:outline-none" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
                 {isMobileMenuOpen ? <IconClose className="size-6" /> : <IconMenu className="size-6" />}
@@ -409,8 +410,9 @@ const TheNav: React.FC = () => {
                     <Link href="/pricing" className="p-4 text-xl font-semibold text-n100 border-b border-n20">Pricing</Link>
 
                     <div className="px-4 mt-6 flex gap-4 pb-6 mb-20 border-b border-n20">
-                        <button className="w-full h-14 bg-n5 text-n100 font-semibold border border-n20">Log in</button>
-                        <button className="w-full h-14 bg-brand text-n100 font-semibold">Start free</button>
+                        {/* <button className="w-full h-14 bg-n5 text-n100 font-semibold border border-n20">Log in</button>
+                        <button className="w-full h-14 bg-brand text-n100 font-semibold">Start free</button> */}
+                        <Link href="/pricing" className="w-full h-14 bg-brand text-n100 font-semibold flex items-center justify-center">See Pricing &rarr;</Link>
                     </div>
                 </div>
              </div>

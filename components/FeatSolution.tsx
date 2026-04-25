@@ -67,85 +67,82 @@ const FeatSolution: React.FC = () => {
 
   return (
     <div>
-      <div className="wrapper">
-        <div className="max-w-(--mw) mx-auto relative">
-          <div
-            id="feature-nav"
-            className="grid grid-cols-4 divide-x divide-n20 border-x border-b border-n20"
-          >
-            {features.map((feat, idx) => (
-              <button
-                key={feat.title}
-                className={`flex gap-3 items-center justify-center py-6 relative group overflow-hidden ${
-                  featSelected === idx ? 'bg-brand-light' : ''
-                }`}
-                onClick={() => selectFeature(idx)}
-              >
-                {/* Background Progress Indicator */}
-                {featSelected === idx && (
-                  <div
-                    key={`indicator-${key}`}
-                    className="indicator-fill w-full h-1 bg-brand absolute bottom-0 left-0 origin-left z-10"
-                    style={{ animation: `progress ${DURATION}ms linear forwards` }}
-                  ></div>
-                )}
+    <div className="wrapper">
+      <div className="max-w-(--mw) mx-auto relative border-x border-n20">
+        <div
+          id="feature-nav"
+          className="grid grid-cols-4 divide-x divide-n20 border-b border-n20 sticky top-18 z-40 bg-white lg:static lg:bg-transparent"
+        >
+          {features.map((feat, idx) => (
+            <button
+              key={feat.title}
+              className={`flex gap-3 items-center justify-center py-4 lg:py-6 relative group overflow-hidden ${
+                featSelected === idx ? 'bg-brand-light' : 'bg-white lg:bg-transparent'
+              }`}
+              onClick={() => selectFeature(idx)}
+            >
+              {/* Background Progress Indicator */}
+              {featSelected === idx && (
+                <div
+                  key={`indicator-${key}`}
+                  className="indicator-fill w-full h-1 bg-brand absolute bottom-0 left-0 origin-left z-10"
+                  style={{ animation: `progress ${DURATION}ms linear forwards` }}
+                ></div>
+              )}
 
-                <img
-                  src={feat.icon}
+              <img
+                src={feat.icon}
+                alt={feat.title}
+                className={`w-8 transition-all duration-300 pointer-events-none select-none ${
+                  featSelected === idx ? '' : 'saturate-0 opacity-50 group-hover:opacity-100 group-hover:saturate-100'
+                }`}
+              />
+              <span
+                className={`hidden lg:block font-semibold text-base lg:text-xl transition-colors duration-300 ${
+                  featSelected === idx ? 'text-n100' : 'text-n60 group-hover:text-n100'
+                }`}
+              >
+                {feat.title.split(' ')[0]}
+                <span className="font-normal">{feat.title.split(' ')[1]}</span>
+              </span>
+            </button>
+          ))}
+        </div>
+
+        <div className="w-full h-4 md:h-6 diagonal-lines border-b border-n20"></div>
+        
+        <div className="grid grid-cols-1 lg:grid-cols-2 divide-y lg:divide-y-0 lg:divide-x divide-n20">
+          <div className="p-8">
+            <div className="max-w-md">
+              <span className="block mb-4 lg:mb-6 font-semibold text-lg lg:text-xl text-n100">
+                {features[featSelected].title.split(' ')[0]}
+                <span className="font-normal">{features[featSelected].title.split(' ')[1]}</span>
+              </span>
+              <h4 className="text-spgreen text-xl lg:text-2xl mb-4">{features[featSelected].subtitle}</h4>
+              <p className="text-n100 font-medium text-base lg:text-lg leading-relaxed">
+                {features[featSelected].description}
+              </p>
+            </div>
+          </div>
+          <div className="p-4">
+            <div className="w-full overflow-hidden relative grid grid-cols-1 grid-rows-1">
+              {features.map((feat, idx) => (
+                  <img
+                  key={feat.title}
+                  src={feat.image}
                   alt={feat.title}
-                  className={`w-8 transition-all duration-300 pointer-events-none select-none ${
-                    featSelected === idx ? '' : 'saturate-0 opacity-50 group-hover:opacity-100 group-hover:saturate-100'
+                  className={`w-full col-start-1 row-start-1 pointer-events-none select-none transition-all duration-500 ease-in-out ${
+                    featSelected === idx 
+                      ? 'opacity-100 translate-x-0' 
+                      : 'opacity-0 translate-x-5 pointer-events-none'
                   }`}
                 />
-                <span
-                  className={`font-semibold text-xl transition-colors duration-300 ${
-                    featSelected === idx ? 'text-n100' : 'text-n60 group-hover:text-n100'
-                  }`}
-                >
-                  {feat.title.split(' ')[0]}
-                  <span className="font-normal">{feat.title.split(' ')[1]}</span>
-                </span>
-              </button>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      <div className="wrapper">
-        <div className="w-full h-4 md:h-6 diagonal-lines border-x border-b border-n20"></div>
-        <div className="max-w-(--mw) mx-auto relative border-x border-n20">
-          <div className="grid grid-cols-2 divide-x divide-n20">
-            <div className="p-8">
-              <div className="max-w-md">
-                <span className="block mb-6 font-semibold text-xl text-n100">
-                  {features[featSelected].title.split(' ')[0]}
-                  <span className="font-normal">{features[featSelected].title.split(' ')[1]}</span>
-                </span>
-                <h4 className="text-spgreen text-2xl mb-4">{features[featSelected].subtitle}</h4>
-                <p className="text-n100 font-medium text-lg leading-relaxed">
-                  {features[featSelected].description}
-                </p>
-              </div>
-            </div>
-            <div className="p-4">
-              <div className="w-full overflow-hidden relative grid grid-cols-1 grid-rows-1">
-                {features.map((feat, idx) => (
-                   <img
-                    key={feat.title}
-                    src={feat.image}
-                    alt={feat.title}
-                    className={`w-full col-start-1 row-start-1 pointer-events-none select-none transition-all duration-500 ease-in-out ${
-                      featSelected === idx 
-                        ? 'opacity-100 translate-x-0' 
-                        : 'opacity-0 translate-x-5 pointer-events-none'
-                    }`}
-                  />
-                ))}
-              </div>
+              ))}
             </div>
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };
