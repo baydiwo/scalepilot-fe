@@ -1,28 +1,208 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-primary: var(--color-brand);
+  --color-brand: #1ce783;
+  --color-brand-dark: #12B063;
+  --color-brand-light: #e3fdf0;
+  --color-brand-mute: #ecf9f3;
+
+  --color-spgreen: #15CB72;
+  --color-spblue: #1c7ee7;
+  --color-spblue-light: #e8f5fd;
+  --color-sporange: #f5a346;
+  --color-sporange-light: #fdf4e2;
+  --color-sppurple: #926df9;
+  --color-sppurple-light: #ede6fe;
+  --color-spred: #e71c52;
+  --color-spred-light: #fde8ed;
+  --color-spcyan: #1ee8f7;
+  --color-spcyan-light: #defdfc;
+
+  --color-n5: #f8faf9;
+  /* Crisp, paper-white */
+  --color-n10: #eff1f0;
+  /* Almost pure gray */
+  --color-n20: #e2e5e4;
+  /* Soft border */
+  --color-n30: #d5d9d7;
+  /* Muted border */
+  --color-n40: #c7cccc;
+  /* Bridge */
+  --color-n50: #b8bdbb;
+  /* Placeholder text */
+  --color-n60: #99a19e;
+  /* Muted typography */
+  --color-n70: #7a827f;
+  /* Secondary text */
+  --color-n80: #5c6361;
+  /* Icons */
+  --color-n90: #404543;
+  /* Dark UI pieces */
+  --color-n100: #262928;
+  /* Deep charcoal */
+  --color-n110: #0f1110;
+  /* Rich obsidian-graphite */
+
+  --color-backdrop: var(--color-n5);
+
+  --mw: 1440px;
+
+  --tracking-heading: -0.023em;
+  --tracking-base: -0.015em;
+
+  --tracking-dense: var(--tracking-heading);
+
+  --font-sans: var(--font-instrument-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, Monaco;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-primary: #15CB72;
-  --color-primary-foreground: #ffffff;
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  body {
+    color: var(--color-n100);
+    font-family: var(--font-sans);
+    letter-spacing: var(--tracking-base);
+    background-color: var(--color-backdrop);
+    font-variation-settings: "wdth" 100;
+    overflow-x: hidden;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.1;
+  letter-spacing: var(--tracking-heading);
+  font-weight: 600;
+}
+
+.title {
+  letter-spacing: var(--tracking-base);
+  font-weight: 600;
+}
+
+.wrapper {
+  padding: 0 16px;
+
+  @media (min-width: 768px) {
+    padding: 0 16px;
+  }
+
+  @media (min-width: 1024px) {
+    padding: 0 40px;
+  }
+}
+
+@utility diagonal-lines {
+  --line-color: var(--color-n20);
+  --line-width: 1px;
+  --line-space: 8px;
+  background-image: repeating-linear-gradient(135deg,
+      var(--line-color),
+      var(--line-color) var(--line-width),
+      transparent var(--line-width),
+      transparent var(--line-space));
+}
+
+@utility dotted-background {
+  --dot-color: var(--color-n100);
+  background-image: radial-gradient(var(--dot-color) 1px, transparent 1px);
+  background-size: 8px 8px;
+}
+
+@utility mask-ellipse {
+  mask-image: radial-gradient(ellipse at top, transparent 60%, black 100%);
+  -webkit-mask-image: radial-gradient(ellipse at top, transparent 60%, black 100%);
+}
+
+@utility mask-ellipse-top-right {
+  mask-image: radial-gradient(ellipse at bottom left, transparent 60%, black 100%);
+  -webkit-mask-image: radial-gradient(ellipse at bottom left, transparent 60%, black 100%);
+}
+
+@utility mask-fade-left {
+  mask-image: linear-gradient(to right, transparent, black 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 100%);
+}
+
+@utility no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@utility mask-circle-hole {
+  mask-image: radial-gradient(circle at center, transparent 20%, black 100%);
+  -webkit-mask-image: radial-gradient(circle at center, transparent 20%, black 100%);
+}
+
+@utility mask-ellipse-center {
+  mask-image: radial-gradient(ellipse at center, black 60%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 60%, transparent 100%);
+}
+
+@utility grid-background {
+  background-image: linear-gradient(var(--color-n20) 1.5px, transparent 1.5px), linear-gradient(90deg, var(--color-n20) 1.5px, transparent 1.5px);
+  background-size: 40px 40px;
+}
+
+@utility floating-badge {
+  animation: float ease-in-out infinite;
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 0.1;
+  }
+
+  50% {
+    opacity: 0.3;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes progress {
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(1);
+  }
+}
+
+::selection {
+  background-color: var(--color-spgreen);
+  color: #fff;
+}
+
+/* @utility gradient-top {
+  background: linear-gradient(124deg, #e1f5ec 0%, rgba(236, 249, 243, 0) 43.74%),
+    linear-gradient(237deg, #e1f5ec 0%, rgba(236, 249, 243, 0) 46.1%);
+} */
+
+@utility gradient-top {
+  background: linear-gradient(124deg, #e1f5ec 0%, rgba(236, 249, 243, 0) 25%),
+    linear-gradient(237deg, #e1f5ec 0%, rgba(236, 249, 243, 0) 25%);
 }
