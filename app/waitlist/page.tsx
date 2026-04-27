@@ -17,7 +17,9 @@ const WaitlistPage: React.FC = () => {
                 alt="ScalePilot"
                 width={160}
                 height={40}
-                className="w-40"
+                className="w-40 h-auto"
+                priority
+                style={{ width: '160px', height: 'auto' }}
               />
             </Link>
             <div className="flex items-center gap-6 text-n80">

@@ -16,6 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.scalepilot.id"),
   title: "ScalePilot | Decision Engine for Meta Ads",
   description: "ScalePilot is the real-time verdict engine for Meta Ads. Scale winners instantly and stop losers before they burn your profits.",
   icons: {

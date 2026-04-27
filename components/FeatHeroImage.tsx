@@ -88,6 +88,7 @@ const FeatHeroImage: React.FC = () => {
             width={1200}
             height={800}
             className="w-full relative z-0"
+            style={{ width: '100%', height: 'auto' }}
             priority
           />
         </div>
@@ -130,7 +131,8 @@ const FeatHeroImage: React.FC = () => {
                       src={badge.src}
                       width={100}
                       height={100}
-                      className="w-full drop-shadow-[0_20px_50px_rgba(0,0,0,0.3)]"
+                      className="w-full h-auto drop-shadow-[0_20px_50px_rgba(0,0,0,0.3)]"
+                      style={{ width: '100%', height: 'auto' }}
                       alt="Verdict Badge"
                     />
                   </div>

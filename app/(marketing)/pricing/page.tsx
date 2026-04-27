@@ -349,6 +349,7 @@ export default function PricingPage() {
                 width={600}
                 height={400}
                 className="w-full pointer-events-none select-none" 
+                style={{ height: 'auto' }}
               />
             </div>
           </div>

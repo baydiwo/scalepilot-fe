@@ -117,7 +117,15 @@ const TheNav: React.FC = () => {
       <div className="wrapper h-full">
         <div className="max-w-(--mw) h-full mx-auto flex items-center relative">
           <Link href="/">
-            <Image src="/scalepilot-logo/svg/scalepilot-logo-default.svg" alt="ScalePilot" width={160} height={40} className="w-40" />
+            <Image 
+              src="/scalepilot-logo/svg/scalepilot-logo-default.svg" 
+              alt="ScalePilot" 
+              width={160} 
+              height={40} 
+              className="w-40 h-auto" 
+              priority
+              style={{ width: '160px', height: 'auto' }}
+            />
           </Link>
 
           <div className="flex-1 px-10 xl:px-20 h-full">
@@ -200,15 +208,36 @@ const TheNav: React.FC = () => {
                             <div className="col-span-8 grid grid-cols-2 bg-n20 gap-px pl-px relative">
                                 {featureItems.map((feat) => (
                                     <div key={feat.title} className="p-8 xl:p-10 bg-backdrop hover:bg-brand-light transition-all cursor-pointer group relative overflow-hidden">
-                                        <Image src={`/img/${feat.icon}.svg`} alt={feat.title} width={200} height={200} className="h-[80%] absolute top-1/2 -translate-y-1/2 -right-6 group-hover:opacity-10 group-hover:translate-x-0 transition duration-200 opacity-0 translate-x-2" />
+                                        <Image 
+                                            src={`/img/${feat.icon}.svg`} 
+                                            alt={feat.title} 
+                                            width={200} 
+                                            height={200} 
+                                            className="h-[80%] absolute top-1/2 -translate-y-1/2 -right-6 group-hover:opacity-10 group-hover:translate-x-0 transition duration-200 opacity-0 translate-x-2" 
+                                            style={{ width: 'auto' }}
+                                        />
                                         <div className="flex items-center gap-3 mb-3">
-                                            <Image src={`/img/${feat.icon}.svg`} alt={feat.title} width={24} height={24} className="w-6" />
+                                            <Image 
+                                                src={`/img/${feat.icon}.svg`} 
+                                                alt={feat.title} 
+                                                width={24} 
+                                                height={24} 
+                                                className="w-6" 
+                                                style={{ height: 'auto' }}
+                                            />
                                             <h4 className="font-semibold text-lg text-n100">{feat.title.split(' ')[0]} <span className="font-normal">{feat.title.split(' ')[1]}</span></h4>
                                         </div>
                                         <p className="max-w-80 text-sm xl:text-base text-n70 leading-snug">{feat.description}</p>
                                     </div>
                                 ))}
-                                <Image src="/img/splogo-center.svg" alt="ScalePilot icon" width={20} height={20} className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-5" />
+                                <Image 
+                                    src="/img/splogo-center.svg" 
+                                    alt="ScalePilot icon" 
+                                    width={20} 
+                                    height={20} 
+                                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-5" 
+                                    style={{ height: 'auto' }}
+                                />
                             </div>
                             <div className="col-span-full h-10 diagonal-lines border-t border-n20 bg-backdrop"></div>
                         </motion.div>
@@ -260,7 +289,14 @@ const TheNav: React.FC = () => {
                                     <div className="absolute inset-0 dotted-background mask-ellipse-top-right opacity-50"></div>
                                     <div className="relative h-full z-10 flex flex-col justify-between">
                                         <div>
-                                            <Image src="/img/sp-academy.svg" alt="ScalePilot Academy" width={48} height={48} className="w-12 mb-2" />
+                                            <Image 
+                                                src="/img/sp-academy.svg" 
+                                                alt="ScalePilot Academy" 
+                                                width={48} 
+                                                height={48} 
+                                                className="w-12 mb-2" 
+                                                style={{ height: 'auto' }}
+                                            />
                                             <h2 className="text-3xl xl:text-4xl font-semibold tracking-tight mb-2 text-white leading-snug">ScalePilot<br />Academy</h2>
                                             <p className="max-w-64 text-brand-light text-sm leading-relaxed mb-8">Master the verdict system and maximize your ROI with our free courses.</p>
                                         </div>
@@ -273,7 +309,14 @@ const TheNav: React.FC = () => {
                                     <a key={res.title} href={res.link} className="p-6 flex flex-col justify-between bg-backdrop hover:bg-brand-light transition-all cursor-pointer group">
                                         <div>
                                             <div className="flex flex-col gap-3 mb-3">
-                                                <Image src={`/img/${res.icon}.svg`} alt={res.title} width={24} height={24} className="w-6" />
+                                                <Image 
+                                                    src={`/img/${res.icon}.svg`} 
+                                                    alt={res.title} 
+                                                    width={24} 
+                                                    height={24} 
+                                                    className="w-6" 
+                                                    style={{ height: 'auto' }}
+                                                />
                                                 <h4 className="font-semibold text-lg text-n100">{res.title}</h4>
                                             </div>
                                             <p className="max-w-80 text-sm xl:text-base text-n70 leading-snug">{res.description}</p>
@@ -328,7 +371,14 @@ const TheNav: React.FC = () => {
                             >
                                 {featureItems.map(feat => (
                                     <Link key={feat.title} href={feat.link} className="p-4 bg-n5 border-b border-n20 flex items-start gap-4">
-                                        <Image src={`/img/${feat.icon}.svg`} alt={feat.title} width={24} height={24} className="w-6" />
+                                        <Image 
+                                        src={`/img/${feat.icon}.svg`} 
+                                        alt={feat.title} 
+                                        width={24} 
+                                        height={24} 
+                                        className="w-6" 
+                                        style={{ height: 'auto' }}
+                                    />
                                         <div>
                                             <h4 className="font-semibold text-lg text-n100 mb-1">{feat.title}</h4>
                                             <p className="text-sm text-n60">{feat.description}</p>
@@ -360,7 +410,14 @@ const TheNav: React.FC = () => {
                             >
                                 {solutionsItems.map(sol => (
                                     <Link key={sol.title} href={sol.link} className="p-4 bg-n5 border-b border-n20 flex items-start gap-4">
-                                        <Image src={sol.image} alt={sol.title} width={40} height={40} className="w-10" />
+                                        <Image 
+                                        src={sol.image} 
+                                        alt={sol.title} 
+                                        width={40} 
+                                        height={40} 
+                                        className="w-10" 
+                                        style={{ height: 'auto' }}
+                                    />
                                         <div>
                                             <h4 className="font-semibold text-lg text-n100 mb-1">{sol.title}</h4>
                                             <p className="text-sm text-n60">{sol.description}</p>

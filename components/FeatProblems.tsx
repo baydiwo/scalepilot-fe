@@ -35,6 +35,7 @@ const FeatProblems: React.FC = () => {
             <Image
               src="/img/problems.jpg"
               alt="The Problem"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
               fill
               className="object-cover"
             />

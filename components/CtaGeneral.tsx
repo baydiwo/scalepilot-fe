@@ -62,6 +62,7 @@ const CtaGeneral: React.FC<CtaGeneralProps> = ({ theme = 'dark' }) => {
               src="/img/spimage1.png"
               className="object-contain xl:object-cover object-center lg:object-left max-w-2xl mx-auto lg:max-w-none"
               alt="ScalePilot Decision Engine"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
               fill
             />
           </div>

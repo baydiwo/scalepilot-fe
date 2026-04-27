@@ -99,6 +99,7 @@ const FeatSolution: React.FC = () => {
                 className={`w-8 transition-all duration-300 pointer-events-none select-none ${
                   featSelected === idx ? '' : 'saturate-0 opacity-50 group-hover:opacity-100 group-hover:saturate-100'
                 }`}
+                style={{ height: 'auto' }}
               />
               <span
                 className={`hidden lg:block font-semibold text-base lg:text-xl transition-colors duration-300 ${
@@ -140,6 +141,7 @@ const FeatSolution: React.FC = () => {
                       ? 'opacity-100 translate-x-0' 
                       : 'opacity-0 translate-x-5 pointer-events-none'
                   }`}
+                  style={{ height: 'auto' }}
                 />
               ))}
             </div>
