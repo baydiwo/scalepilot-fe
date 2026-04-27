@@ -82,12 +82,12 @@ export default function Home() {
                 <div className="grid lg:grid-cols-2">
                   <div className="max-w-xl">
                     <h2 className="text-n100 text-5xl md:text-5xl leading-none">
-                      Monitoring isn't Scaling. <span className="text-spred">It's Reacting.</span>
+                      Monitoring isn&apos;t Scaling. <span className="text-spred">It&apos;s Reacting.</span>
                     </h2>
                   </div>
                   <div className="mt-6 lg:mt-0 max-w-xl lg:px-14 xl:px-0">
                     <p className="leading-relaxed">
-                      Most tools give you more data. ScalePilot gives you more decisions. Don't just watch your spend, command it. Because every minute you spend 'analyzing' is a minute your competitor spends scaling.
+                      Most tools give you more data. ScalePilot gives you more decisions. Don&apos;t just watch your spend, command it. Because every minute you spend &apos;analyzing&apos; is a minute your competitor spends scaling.
                     </p>
                   </div>
                 </div>
@@ -160,7 +160,7 @@ export default function Home() {
                     className="w-10"
                     color="green"
                   />
-                  <span className="font-medium text-sm">User's Stories</span>
+                  <span className="font-medium text-sm">User&apos;s Stories</span>
                 </div>
                 <div className="grid lg:grid-cols-2">
                   <div className="max-w-xl">
@@ -171,7 +171,7 @@ export default function Home() {
                   </div>
                   <div className="mt-6 lg:mt-0 max-w-xl lg:px-14 xl:px-0">
                     <p className="leading-relaxed">From business owners, to professional marketers, to managers handling
-                      multiple clients with hundreds of ad accounts. Here’s what they have to say about ScalePilot.
+                      multiple clients with hundreds of ad accounts. Here&apos;s what they have to say about ScalePilot.
                     </p>
                   </div>
                 </div>

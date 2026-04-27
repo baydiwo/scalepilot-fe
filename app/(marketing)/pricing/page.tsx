@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 import FlagAccent from '@/components/FlagAccent';
 import TitleAccentTriangle from '@/components/TitleAccentTriangle';
 import BaseTooltip from '@/components/BaseTooltip';
@@ -9,7 +10,30 @@ import IconYes from '@/components/IconYes';
 import IconNo from '@/components/IconNo';
 import CtaGeneral from '@/components/CtaGeneral';
 
-const pricingData = [
+interface ComparisonValue {
+  text: string;
+  info?: boolean;
+  tooltip?: {
+    title: string;
+    items: string[];
+  };
+}
+
+interface Plan {
+  name: string;
+  id: string;
+  bestFor: string;
+  price: { month: string; year: string };
+  currency: string;
+  period: string;
+  color: string;
+  hoverH: string;
+  features: { text: string; info?: boolean }[];
+  comparison: Record<string, string | boolean | ComparisonValue>;
+  cta: string;
+}
+
+const pricingData: Plan[] = [
   {
     name: "Basic",
     id: "basic",
@@ -249,16 +273,16 @@ const pricingData = [
 ];
 
 const comparisonRows = [
-  { label: 'Meta Ad Account', key: 'metaAdAccount' },
-  { label: 'Verdict Types', key: 'verdictTypes' },
+  { label: 'Meta Ad Account', key: 'metaAdAccount', isBoolean: false },
+  { label: 'Verdict Types', key: 'verdictTypes', isBoolean: false },
   { label: 'Ad-Level Verdicts', key: 'adLevelVerdicts', isBoolean: true },
   { label: 'Scale Intelligence', key: 'scaleIntelligence', isBoolean: true },
-  { label: 'Data History', key: 'dataHistory' },
-  { label: 'Action Hub', key: 'actionHub' },
-  { label: 'Revert Budget', key: 'revertBudget' },
-  { label: 'Auto-Scaling Rules', key: 'autoScalingRules' },
-  { label: 'Support', key: 'support' },
-  { label: 'Team Members', key: 'teamMembers' },
+  { label: 'Data History', key: 'dataHistory', isBoolean: false },
+  { label: 'Action Hub', key: 'actionHub', isBoolean: false },
+  { label: 'Revert Budget', key: 'revertBudget', isBoolean: false },
+  { label: 'Auto-Scaling Rules', key: 'autoScalingRules', isBoolean: false },
+  { label: 'Support', key: 'support', isBoolean: false },
+  { label: 'Team Members', key: 'teamMembers', isBoolean: false },
   { label: 'White-Label', key: 'whiteLabel', isBoolean: true },
   { label: 'SLA', key: 'sla', isBoolean: true },
 ];
@@ -270,8 +294,8 @@ export default function PricingPage() {
   const toggleBilling = () => setIsYearly(!isYearly);
   const currentPeriod = isYearly ? 'year' : 'month';
 
-  const renderComparisonValue = (plan: typeof pricingData[0], row: typeof comparisonRows[0]) => {
-    const val = (plan.comparison as any)[row.key];
+  const renderComparisonValue = (plan: Plan, row: typeof comparisonRows[0]) => {
+    const val = plan.comparison[row.key];
 
     if (row.isBoolean) {
       return val ? (
@@ -282,13 +306,14 @@ export default function PricingPage() {
     }
 
     if (typeof val === 'object' && val !== null) {
+      const typedVal = val as ComparisonValue;
       return (
         <div className="flex items-center gap-1.5">
-          <span className="text-sm text-n90">{val.text}</span>
-          {val.info && (
+          <span className="text-sm text-n90">{typedVal.text}</span>
+          {typedVal.info && (
             <BaseTooltip
-              title={val.tooltip?.title}
-              items={val.tooltip?.items}
+              title={typedVal.tooltip?.title}
+              items={typedVal.tooltip?.items}
               position="right"
               trigger={<IconInfo className="size-4 text-n60 shrink-0" />}
             />
@@ -301,7 +326,7 @@ export default function PricingPage() {
       return <span className="text-n40 flex justify-start w-full"><IconNo className="size-5" /></span>;
     }
 
-    return <span className="text-sm text-n90">{val}</span>;
+    return <span className="text-sm text-n90">{val as string}</span>;
   };
 
   return (
@@ -318,7 +343,13 @@ export default function PricingPage() {
               </h1>
             </div>
             <div className="lg:flex w-1/2 px-10 hidden">
-              <img src="/img/roas.png" alt="roas" className="w-full pointer-events-none select-none" />
+              <Image 
+                src="/img/roas.png" 
+                alt="roas" 
+                width={600}
+                height={400}
+                className="w-full pointer-events-none select-none" 
+              />
             </div>
           </div>
           <FlagAccent />

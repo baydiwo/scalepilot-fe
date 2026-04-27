@@ -26,14 +26,14 @@ const TermsOfServicePage: React.FC = () => {
               <section>
                 <h2 className="text-2xl text-n100 font-semibold mb-4">1. Acceptance of Terms</h2>
                 <p>
-                  By accessing or using ScalePilot ("the Platform"), you agree to be bound by these Terms of Service. If you are using the Platform on behalf of an agency or company, you represent that you have the authority to bind that entity to these terms.
+                  By accessing or using ScalePilot (&quot;the Platform&quot;), you agree to be bound by these Terms of Service. If you are using the Platform on behalf of an agency or company, you represent that you have the authority to bind that entity to these terms.
                 </p>
               </section>
 
               <section>
                 <h2 className="text-2xl text-n100 font-semibold mb-4">2. Description of Service</h2>
                 <p>
-                  ScalePilot provides a "Decision Engine" for Meta Ads, offering automated verdicts (SCALE UP, STOP LOSS, etc.) and a Scale Tracker for historical data analysis. You understand that ScalePilot acts as a "Co-Pilot," and the final execution of any advertising action is your responsibility.
+                  ScalePilot provides a &quot;Decision Engine&quot; for Meta Ads, offering automated verdicts (SCALE UP, STOP LOSS, etc.) and a Scale Tracker for historical data analysis. You understand that ScalePilot acts as a &quot;Co-Pilot,&quot; and the final execution of any advertising action is your responsibility.
                 </p>
               </section>
 

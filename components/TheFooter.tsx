@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import CtaStartFree from './CtaStartFree';
 import IconGlobe from './IconGlobe';
 import IconUpTriangle from './IconUpTriangle';
@@ -56,6 +57,7 @@ const TheFooter: React.FC = () => {
   const [year, setYear] = React.useState<number | string>('');
 
   React.useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setYear(new Date().getFullYear());
   }, []);
   return (
@@ -64,9 +66,11 @@ const TheFooter: React.FC = () => {
       <div className="border-t border-n20">
         <div className="wrapper">
           <div className="max-w-(--mw) mx-auto relative px-6 py-6 border-x border-n20">
-            <img
+            <Image
               src="/scalepilot-logo/svg/scalepilot-logo-default.svg"
               alt="ScalePilot"
+              width={128}
+              height={32}
               className="w-32"
             />
           </div>

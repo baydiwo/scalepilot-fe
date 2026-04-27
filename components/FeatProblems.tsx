@@ -1,10 +1,11 @@
 import React from 'react';
+import Image from 'next/image';
 import IconWarning from './IconWarning';
 
 const problems = [
-  '90% of media buyers scale based on "gut feeling" or incomplete data.',
+  '90% of media buyers scale based on &quot;gut feeling&quot; or incomplete data.',
   'Most tools just show you more charts. ScalePilot shows you what to do.',
-  'If you\'re still obsessing over Ads Manager every hour, you\'re not scaling, you\'re reacting.'
+  'If you&apos;re still obsessing over Ads Manager every hour, you&apos;re not scaling, you&apos;re reacting.'
 ]
 
 const FeatProblems: React.FC = () => {
@@ -24,17 +25,18 @@ const FeatProblems: React.FC = () => {
                   ></div>
                   <span className="flex gap-6 items-start max-w-lg relative z-10">
                     <IconWarning className="size-10 text-n60 transition duration-200 group-hover:text-spred" />
-                    <span className="text-n100 text-xl">{problem}</span>
+                    <span className="text-n100 text-xl" dangerouslySetInnerHTML={{ __html: problem }}></span>
                   </span>
                 </li>
               ))}
             </ul>
           </div>
-          <div className="w-full aspect-video">
-            <img
+          <div className="w-full aspect-video relative">
+            <Image
               src="/img/problems.jpg"
               alt="The Problem"
-              className="w-full h-full object-cover"
+              fill
+              className="object-cover"
             />
           </div>
         </div>

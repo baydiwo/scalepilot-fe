@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const WaitlistPage: React.FC = () => {
   return (
@@ -11,9 +12,11 @@ const WaitlistPage: React.FC = () => {
         <div className="wrapper w-full">
           <div className="max-w-(--mw) mx-auto relative flex items-center justify-between h-full">
             <Link href="/">
-              <img
+              <Image
                 src="/scalepilot-logo/svg/scalepilot-logo-default.svg"
                 alt="ScalePilot"
+                width={160}
+                height={40}
                 className="w-40"
               />
             </Link>
