@@ -1,16 +1,17 @@
 import React from 'react';
+import Image from 'next/image';
 
 const testimonials = [
   {
     name: 'Irvan Nugraha',
     role: 'Business Owner',
-    quote: 'ScalePilot has completely stabilized our growth. We used to hit a ceiling every time we scaled, but now the Verdict Engine handles the risk for us. It’s like having a senior media buyer on call 24/7.',
+    quote: 'ScalePilot has completely stabilized our growth. We used to hit a ceiling every time we scaled, but now the Verdict Engine handles the risk for us. It&apos;s like having a senior media buyer on call 24/7.',
     avatar: '/img/user1.jpg',
   },
   {
     name: 'Destin Siahaan',
     role: 'Professional Marketer',
-    quote: 'The speed of decision-making is what sets ScalePilot apart. I no longer waste hours staring at dashboard trends. If an ad is winning, we scale it instantly. If it’s not, we’re out before it drains the budget.',
+    quote: 'The speed of decision-making is what sets ScalePilot apart. I no longer waste hours staring at dashboard trends. If an ad is winning, we scale it instantly. If it&apos;s not, we&apos;re out before it drains the budget.',
     avatar: '/img/user2.jpg',
   },
   {
@@ -36,14 +37,16 @@ const FeatTestimonials: React.FC = () => {
             >
               <div className="bg-white flex flex-col border-x border-n20 relative">
                 <div className="flex-1 p-9 relative z-10">
-                  <p className="leading-relaxed font-medium text-lg">{testimonial.quote}</p>
+                  <p className="leading-relaxed font-medium text-lg" dangerouslySetInnerHTML={{ __html: testimonial.quote }}></p>
                 </div>
 
                 <div className="flex items-center gap-4 mb-9 px-9 border-y border-n20">
                   <div className="border-x border-n20">
-                    <img
+                    <Image
                       src={testimonial.avatar}
                       alt={testimonial.name}
+                      width={72}
+                      height={72}
                       className="size-18 object-cover"
                     />
                   </div>

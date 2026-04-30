@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
+import Image from 'next/image';
 
 interface FlagAccentProps {
   icon?: string;
@@ -52,10 +53,12 @@ const FlagAccent: React.FC<FlagAccentProps> = ({
       className={`flex-col items-center gap-2 hidden h-[90%] absolute right-[-9px] lg:flex bottom-0 ${className}`}
     >
       {children ? children : (
-        <img
+        <Image
           src={iconPath}
           className="size-5"
           alt=""
+          width={20}
+          height={20}
         />
       )}
 

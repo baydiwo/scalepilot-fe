@@ -26,7 +26,7 @@ const PrivacyPolicyPage: React.FC = () => {
               <section>
                 <h2 className="text-2xl text-n100 font-semibold mb-4">1. Introduction</h2>
                 <p>
-                  At ScalePilot, we understand that your advertising data is your competitive advantage. Our "Decision Engine" is built on a foundation of trust and transparency. This Privacy Policy outlines how we collect, process, and protect your data when you use our Meta Ads optimization platform.
+                  At ScalePilot, we understand that your advertising data is your competitive advantage. Our &quot;Decision Engine&quot; is built on a foundation of trust and transparency. This Privacy Policy outlines how we collect, process, and protect your data when you use our Meta Ads optimization platform.
                 </p>
               </section>
 
@@ -36,7 +36,7 @@ const PrivacyPolicyPage: React.FC = () => {
                 <ul className="list-disc pl-5 mt-4 space-y-2">
                   <li><strong className="text-n100">Account Information:</strong> Name, email address, and authentication tokens provided through Meta OAuth and Supabase.</li>
                   <li><strong className="text-n100">Advertising Insights:</strong> Campaign names, ad set details, ad creatives, and performance metrics (Spend, ROAS, CPA, CTR) fetched via the Meta Ads API.</li>
-                  <li><strong className="text-n100">Activity Logs:</strong> Records of actions taken within the ScalePilot platform, such as budget adjustments, "Scale Up" decisions, and "Stop Loss" triggers.</li>
+                  <li><strong className="text-n100">Activity Logs:</strong> Records of actions taken within the ScalePilot platform, such as budget adjustments, &quot;Scale Up&quot; decisions, and &quot;Stop Loss&quot; triggers.</li>
                 </ul>
               </section>
 

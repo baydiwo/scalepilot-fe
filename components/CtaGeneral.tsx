@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import TitleAccentTriangle from './TitleAccentTriangle';
 
 interface CtaGeneralProps {
@@ -56,11 +57,13 @@ const CtaGeneral: React.FC<CtaGeneralProps> = ({ theme = 'dark' }) => {
               </a>
             </div>
           </div>
-          <div className="order-1 lg:order-2 w-full lg:h-full lg:flex-1 overflow-hidden group">
-            <img
+          <div className="order-1 lg:order-2 w-full lg:h-full lg:flex-1 overflow-hidden group relative min-h-[300px]">
+            <Image
               src="/img/spimage1.png"
-              className="w-full h-full object-contain xl:object-cover object-center lg:object-left max-w-2xl mx-auto lg:max-w-none"
+              className="object-contain xl:object-cover object-center lg:object-left max-w-2xl mx-auto lg:max-w-none"
               alt="ScalePilot Decision Engine"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
+              fill
             />
           </div>
         </div>

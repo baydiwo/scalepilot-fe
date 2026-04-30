@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Instrument_Sans, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import Providers from "./providers";
 
@@ -15,6 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.scalepilot.id"),
   title: "ScalePilot | Decision Engine for Meta Ads",
   description: "ScalePilot is the real-time verdict engine for Meta Ads. Scale winners instantly and stop losers before they burn your profits.",
   icons: {
@@ -57,6 +59,19 @@ export default function RootLayout({
         <Providers>
           {children}
         </Providers>
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=G-JGCXHK9PCR`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-JGCXHK9PCR');
+          `}
+        </Script>
       </body>
     </html>
   );

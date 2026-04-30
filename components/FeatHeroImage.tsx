@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useRef, useMemo } from 'react';
+import Image from 'next/image';
 
 const badges = [
   // Top Badges
@@ -27,6 +28,7 @@ const FeatHeroImage: React.FC = () => {
   const [scrollStats, setScrollStats] = useState({ top: 0, height: 0 });
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setHasMounted(true);
     const handleScroll = () => {
       if (targetRef.current) {
@@ -58,8 +60,8 @@ const FeatHeroImage: React.FC = () => {
     if (!hasMounted || typeof window === 'undefined' || !isVisible || !scrollStats.top) return 0;
     
     // Calculate progress starting from the visibility trigger (0.45) up to the top (0)
-    let progress = Math.min(Math.max(scrollStats.top / window.innerHeight, 0), 0.45);
-    let factor = (0.45 - progress) / 0.45;
+    const progress = Math.min(Math.max(scrollStats.top / window.innerHeight, 0), 0.45);
+    const factor = (0.45 - progress) / 0.45;
 
     // Max tilt of 15 degrees as it reaches the top
     return factor * 15;
@@ -80,10 +82,14 @@ const FeatHeroImage: React.FC = () => {
             transformOrigin: 'center top'
           }}
         >
-          <img
+          <Image
             src="/img/sp-hero.png"
             alt="ScalePilot Dashboard"
+            width={1200}
+            height={800}
             className="w-full relative z-0"
+            style={{ width: '100%', height: 'auto' }}
+            priority
           />
         </div>
       </div>
@@ -121,9 +127,12 @@ const FeatHeroImage: React.FC = () => {
                     className="floating-badge"
                     style={{ animationDuration: badge.duration }}
                   >
-                    <img
+                    <Image
                       src={badge.src}
-                      className="w-full drop-shadow-[0_20px_50px_rgba(0,0,0,0.3)]"
+                      width={100}
+                      height={100}
+                      className="w-full h-auto drop-shadow-[0_20px_50px_rgba(0,0,0,0.3)]"
+                      style={{ width: '100%', height: 'auto' }}
                       alt="Verdict Badge"
                     />
                   </div>

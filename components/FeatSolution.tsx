@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
+import Image from 'next/image';
 
 const DURATION = 8000;
 
@@ -24,7 +25,7 @@ const features = [
   {
     title: 'Scale Tracker',
     subtitle: 'Full historical audit of every scaling decision and its marginal ROI impact.',
-    description: 'The ultimate learning machine for your scaling strategy. It automatically logs every budget adjustment and its marginal impact on performance, building a historical database of your scaling "hits and misses" so you can refine your strategy over time.',
+    description: 'The ultimate learning machine for your scaling strategy. It automatically logs every budget adjustment and its marginal impact on performance, building a historical database of your scaling &quot;hits and misses&quot; so you can refine your strategy over time.',
     icon: '/img/scaletracker-icon.svg',
     image: '/img/tab-scale-tracker.png',
     link: '#',
@@ -32,7 +33,7 @@ const features = [
   {
     title: 'Budget Revert',
     subtitle: 'Instantly undo underperforming scales and restore previous budget levels.',
-    description: 'The safety net for aggressive scaling. If a budget increase doesn\'t yield the expected gains within 24-72 hours, the Budget Revert Engine lets you undo the change with one click, restoring your previous budget and protecting your profits from "scale-up crashes.',
+    description: 'The safety net for aggressive scaling. If a budget increase doesn&apos;t yield the expected gains within 24-72 hours, the Budget Revert Engine lets you undo the change with one click, restoring your previous budget and protecting your profits from &quot;scale-up crashes&quot;.',
     icon: '/img/budgetrevert-icon.svg',
     image: '/img/tab-budget-revert.png',
     link: '#',
@@ -90,12 +91,15 @@ const FeatSolution: React.FC = () => {
                 ></div>
               )}
 
-              <img
+              <Image
                 src={feat.icon}
                 alt={feat.title}
+                width={32}
+                height={32}
                 className={`w-8 transition-all duration-300 pointer-events-none select-none ${
                   featSelected === idx ? '' : 'saturate-0 opacity-50 group-hover:opacity-100 group-hover:saturate-100'
                 }`}
+                style={{ height: 'auto' }}
               />
               <span
                 className={`hidden lg:block font-semibold text-base lg:text-xl transition-colors duration-300 ${
@@ -119,23 +123,25 @@ const FeatSolution: React.FC = () => {
                 <span className="font-normal">{features[featSelected].title.split(' ')[1]}</span>
               </span>
               <h4 className="text-spgreen text-xl lg:text-2xl mb-4">{features[featSelected].subtitle}</h4>
-              <p className="text-n100 font-medium text-base lg:text-lg leading-relaxed">
-                {features[featSelected].description}
+              <p className="text-n100 font-medium text-base lg:text-lg leading-relaxed" dangerouslySetInnerHTML={{ __html: features[featSelected].description }}>
               </p>
             </div>
           </div>
           <div className="p-4">
             <div className="w-full overflow-hidden relative grid grid-cols-1 grid-rows-1">
               {features.map((feat, idx) => (
-                  <img
+                  <Image
                   key={feat.title}
                   src={feat.image}
                   alt={feat.title}
+                  width={800}
+                  height={600}
                   className={`w-full col-start-1 row-start-1 pointer-events-none select-none transition-all duration-500 ease-in-out ${
                     featSelected === idx 
                       ? 'opacity-100 translate-x-0' 
                       : 'opacity-0 translate-x-5 pointer-events-none'
                   }`}
+                  style={{ height: 'auto' }}
                 />
               ))}
             </div>
