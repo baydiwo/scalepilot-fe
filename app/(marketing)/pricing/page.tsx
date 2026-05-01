@@ -23,7 +23,7 @@ interface Plan {
   name: string;
   id: string;
   bestFor: string;
-  price: { month: string; year: string };
+  price: { month: string; year: string, discMonth: string, discYear: string };
   currency: string;
   period: string;
   color: string;
@@ -38,33 +38,34 @@ const pricingData: Plan[] = [
     name: "Basic",
     id: "basic",
     bestFor: "Those who just started and want to try the power of ScalePilot",
-    price: { month: "0", year: "0" },
+    price: { month: "0", year: "0", discMonth: "", discYear: "" },
     currency: "Rp",
     period: "/ month",
     color: "bg-spblue",
     hoverH: "lg:group-hover:h-1",
     features: [
-      { text: "1 Meta Ad Account", info: true },
-      { text: "3 Verdict Types" },
-      { text: "3 Days Data History" },
+      { text: "1 Meta Ad Account" },
+      { text: "3 Verdict Engine" },
+      { text: "Scale Tracker" },
+      { text: "Engine Mode: Conservative & Balance" },
+      { text: "7 Days Data History" },
       { text: "Community Support" },
-      { text: "1 Team Member" }
     ],
     comparison: {
       metaAdAccount: "1",
       verdictTypes: {
         text: "3 modules",
         info: true,
-        tooltip: { title: "Verdict Types", items: ["Monitor", "Learning", "Paused"] }
+        tooltip: { title: "Verdict Engine", items: ["Monitor", "Learning", "Paused"] }
       },
       adLevelVerdicts: false,
       scaleIntelligence: false,
-      dataHistory: "3 Days",
+      dataHistory: "7 Days",
+      scaleTracker: true,
+      engineMode: "Conservative & Balance",
       actionHub: false,
       revertBudget: false,
-      autoScalingRules: false,
       support: "Community",
-      teamMembers: "1",
       whiteLabel: false,
       sla: false
     },
@@ -74,18 +75,19 @@ const pricingData: Plan[] = [
     name: "Starter",
     id: "starter",
     bestFor: "More advance user that wants access to complete tooling",
-    price: { month: "199.000", year: "1.990.000" },
+    price: { month: "199.000", year: "1.990.000", discMonth: "99.000", discYear: "990.000" },
     currency: "Rp",
     period: "/ month",
     color: "bg-sporange",
     hoverH: "lg:group-hover:h-2",
     features: [
       { text: "1 Meta Ad Account" },
-      { text: "7 Verdict Types" },
+      { text: "5 Verdict Engine" },
+      { text: "Scale Tracker" },
+      { text: "Engine Mode: Conservative & Balance" },
+      { text: "Action Hub" },
       { text: "14 Days Data History" },
-      { text: "20% Action Hub" },
-      { text: "Email Support" },
-      { text: "1 Team Member" }
+      { text: "Email Support" }
     ],
     comparison: {
       metaAdAccount: "1",
@@ -93,22 +95,22 @@ const pricingData: Plan[] = [
         text: "7 modules",
         info: true,
         tooltip: {
-          title: "Verdict Types",
+          title: "Verdict Engine",
           items: ["Monitor", "Learning", "Paused", "Scale Up", "Scale Out", "Stop Loss", "Hard Kill", "Soft Kill"]
         }
       },
       adLevelVerdicts: false,
       scaleIntelligence: false,
       dataHistory: "14 Days",
+      scaleTracker: true,
+      engineMode: "Conservative & Balance",
       actionHub: "Quick-scale",
       revertBudget: false,
-      autoScalingRules: false,
       support: {
         text: "Email",
         info: true,
         tooltip: { title: "Support", items: ["Email ticketing", "Mon-Fri Support"] }
       },
-      teamMembers: "1",
       whiteLabel: false,
       sla: false
     },
@@ -118,7 +120,7 @@ const pricingData: Plan[] = [
     name: "Growth",
     id: "growth",
     bestFor: "Professional that aims to further maximize profits with advance tooling",
-    price: { month: "499.000", year: "4.990.000" },
+    price: { month: "499.000", year: "4.990.000", discMonth: "199.000", discYear: "1.990.000" },
     currency: "Rp",
     period: "/ month",
     color: "bg-brand",
@@ -127,11 +129,11 @@ const pricingData: Plan[] = [
       { text: "2 Meta Ad Account" },
       { text: "Full Verdict Engine" },
       { text: "Ad-Level Verdicts" },
+      { text: "Scale Tracker" },
+      { text: "Engine Mode: Conservative, Balance & Aggressive" },
+      { text: "Custom Action Hub" },
       { text: "30 Days Data History" },
-      { text: "20% + Custom Action Hub" },
-      { text: "5 Auto-Scaling Rules" },
-      { text: "Chat Support" },
-      { text: "2 Team Members" }
+      { text: "Chat Support" }
     ],
     comparison: {
       metaAdAccount: "2",
@@ -139,26 +141,26 @@ const pricingData: Plan[] = [
         text: "Full",
         info: true,
         tooltip: {
-          title: "Verdict Types",
+          title: "Verdict Engine",
           items: ["Monitor", "Learning", "Paused", "Scale Up", "Scale Out", "Stop Loss", "Hard Kill", "Soft Kill"]
         }
       },
       adLevelVerdicts: true,
       scaleIntelligence: false,
       dataHistory: "30 Days",
+      scaleTracker: true,
+      engineMode: "Conservative, Balance & Aggressive",
       actionHub: {
         text: "Complete",
         info: true,
         tooltip: { title: "Action Hub", items: ["Quick-scale", "Custom-scale", "Revert Budget"] }
       },
       revertBudget: false,
-      autoScalingRules: "5 Presets",
       support: {
         text: "Chat",
         info: true,
         tooltip: { title: "Support", items: ["Live Chat", "Mon-Sat Support"] }
       },
-      teamMembers: "2",
       whiteLabel: false,
       sla: false
     },
@@ -168,22 +170,21 @@ const pricingData: Plan[] = [
     name: "Pro",
     id: "pro",
     bestFor: "Expert who handles multi-accounts with the needs of power tools",
-    price: { month: "899.000", year: "8.990.000" },
+    price: { month: "899.000", year: "8.990.000", discMonth: "399.000", discYear: "3.990.000" },
     currency: "Rp",
     period: "/ month",
     color: "bg-sppurple",
     hoverH: "lg:group-hover:h-6",
     features: [
       { text: "5 Meta Ad Account" },
-      { text: "AI Verdict Engine" },
+      { text: "Full Verdict Engine" },
       { text: "Ad-Level Verdicts" },
-      { text: "Scale Intelligence" },
+      { text: "Scale Tracker" },
+       { text: "Engine Mode: Conservative, Balance & Aggressive" },
+      { text: "Custom Action Hub" },
       { text: "Maximum Data History" },
-      { text: "20% + Custom Action Hub" },
       { text: "24 Hour Revert Budget" },
-      { text: "Unlimited Auto-Scaling Rules" },
-      { text: "Priority Support" },
-      { text: "5 Team Members" }
+      { text: "Priority Support" }
     ],
     comparison: {
       metaAdAccount: "5",
@@ -191,26 +192,26 @@ const pricingData: Plan[] = [
         text: "Full + AI",
         info: true,
         tooltip: {
-          title: "Verdict Types",
+          title: "Verdict Engine",
           items: ["Monitor", "Learning", "Paused", "Scale Up", "Scale Out", "Stop Loss", "Hard Kill", "Soft Kill", "AI-Optimization"]
         }
       },
       adLevelVerdicts: true,
       scaleIntelligence: true,
       dataHistory: "Maximum",
+      scaleTracker: true,
+      engineMode: "Conservative, Balance & Aggressive",
       actionHub: {
         text: "Complete",
         info: true,
         tooltip: { title: "Action Hub", items: ["Quick-scale", "Custom-scale", "Revert Budget", "Auto-Scaling"] }
       },
       revertBudget: "24 Hour",
-      autoScalingRules: "Unlimited",
       support: {
         text: "Priority Email & Chat",
         info: true,
         tooltip: { title: "Support", items: ["Priority Email", "Live Chat", "Mon-Sat Support"] }
       },
-      teamMembers: "5",
       whiteLabel: false,
       sla: false
     },
@@ -220,22 +221,21 @@ const pricingData: Plan[] = [
     name: "Max",
     id: "max",
     bestFor: "Big team, agency & anyone who wants ultimate ScalePilot experience",
-    price: { month: "Custom", year: "Custom" },
+    price: { month: "Custom", year: "Custom", discMonth: "", discYear: "" },
     currency: "",
     period: "Billed year",
     color: "bg-spred",
     hoverH: "lg:group-hover:h-8",
     features: [
       { text: "Unlimited Meta Ad Account" },
-      { text: "Custom AI Verdict Engine" },
+      { text: "Full Verdict Engine" },
       { text: "Ad-Level Verdicts" },
-      { text: "Scale Intelligence" },
-      { text: "Maximum Data History" },
-      { text: "20% + Custom Action Hub" },
+      { text: "Scale Tracker" },
+      { text: "Engine Mode: Conservative, Balance & Aggressive" },
+      { text: "Custom Action Hub" },
       { text: "72 Hour Revert Budget" },
-      { text: "Unlimited Auto-Scaling Rules" },
+      { text: "Maximum Data History" },
       { text: "Dedicated Support" },
-      { text: "Unlimited Team Members" },
       { text: "White-Label" },
       { text: "99.9% SLA" }
     ],
@@ -245,26 +245,26 @@ const pricingData: Plan[] = [
         text: "Custom AI",
         info: true,
         tooltip: {
-          title: "Verdict Types",
+          title: "Verdict Engine",
           items: ["Monitor", "Learning", "Paused", "Scale Up", "Scale Out", "Stop Loss", "Hard Kill", "Soft Kill", "Custom AI"]
         }
       },
       adLevelVerdicts: true,
       scaleIntelligence: true,
       dataHistory: "Maximum",
+      scaleTracker: true,
+      engineMode: "Conservative, Balance & Aggressive",
       actionHub: {
         text: "Complete",
         info: true,
         tooltip: { title: "Action Hub", items: ["Full Action Suite", "Dedicated Rules"] }
       },
       revertBudget: "72 Hour",
-      autoScalingRules: "Unlimited",
       support: {
         text: "Dedicated",
         info: true,
         tooltip: { title: "Support", items: ["Account Manager", "24/7 Priority Support"] }
       },
-      teamMembers: "Unlimited",
       whiteLabel: true,
       sla: true
     },
@@ -274,15 +274,14 @@ const pricingData: Plan[] = [
 
 const comparisonRows = [
   { label: 'Meta Ad Account', key: 'metaAdAccount', isBoolean: false },
-  { label: 'Verdict Types', key: 'verdictTypes', isBoolean: false },
+  { label: 'Verdict Engine', key: 'verdictTypes', isBoolean: false },
+  { label: 'Scale Tracker', key: 'scaleTracker', isBoolean: true },
+  { label: 'Engine Mode', key: 'engineMode', isBoolean: false },
   { label: 'Ad-Level Verdicts', key: 'adLevelVerdicts', isBoolean: true },
-  { label: 'Scale Intelligence', key: 'scaleIntelligence', isBoolean: true },
-  { label: 'Data History', key: 'dataHistory', isBoolean: false },
   { label: 'Action Hub', key: 'actionHub', isBoolean: false },
   { label: 'Revert Budget', key: 'revertBudget', isBoolean: false },
-  { label: 'Auto-Scaling Rules', key: 'autoScalingRules', isBoolean: false },
+  { label: 'Data History', key: 'dataHistory', isBoolean: false },
   { label: 'Support', key: 'support', isBoolean: false },
-  { label: 'Team Members', key: 'teamMembers', isBoolean: false },
   { label: 'White-Label', key: 'whiteLabel', isBoolean: true },
   { label: 'SLA', key: 'sla', isBoolean: true },
 ];
@@ -374,42 +373,64 @@ export default function PricingPage() {
               <span className={`title block relative transition duration-200 select-none ${isYearly ? 'text-n100' : 'text-n60'}`}>
                 Yearly
                 <span className={`block absolute text-[9px] -top-2 left-[120%] bg-brand text-n100 tracking-base whitespace-nowrap pointer-events-none select-none transition pr-2.5 duration-200 leading-none p-1 rounded-xs [clip-path:polygon(100%_0%,90%_50%,100%_100%,0%_100%,0_48%,0%_0%)] ${isYearly ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-0.5'}`}>
-                  Save 10%
+                  Save 17%
                 </span>
               </span>
             </button>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-x-4 xl:gap-x-6 lg:border-x border-n20">
-            {pricingData.map((plan, idx) => (
-              <div key={plan.id} className="border-x lg:first:border-l-0 first:border-l border-n20 lg:last:border-r-0 last:border-b flex flex-col group last:col-span-1 md:last:col-span-2 lg:last:col-span-1">
-                <div className="h-8 flex items-end">
-                  <div className={`w-full h-0.5 transition-all duration-300 ${plan.color} ${plan.hoverH}`}></div>
-                </div>
-                <div className="p-4 border-b border-n20 relative min-h-[87px]">
-                  {idx === 0 && <div className="h-[calc(100%+2px)] w-80 diagonal-lines border-y -top-px border-n20 absolute right-full"></div>}
-                  {idx === pricingData.length - 1 && <div className="h-[calc(100%+2px)] w-80 diagonal-lines border-y -top-px border-n20 absolute left-full"></div>}
-                  {idx !== 0 && <div className="h-[calc(100%+2px)] w-4 xl:w-6 diagonal-lines border-y -top-px border-n20 absolute right-full"></div>}
-                  <h3 className="title text-xl text-n100">{plan.name}</h3>
-                  <div className={`mt-1 flex items-baseline ${plan.price[currentPeriod] !== 'Custom' ? 'gap-1' : ''}`}>
-                    {plan.price[currentPeriod] !== 'Custom' ? (
-                      <>
-                        <span className="text-xs font-bold text-n100">{plan.currency}</span>
-                        <span className="text-xl font-semibold text-n100">
-                          {plan.price[currentPeriod].includes('.') ? plan.price[currentPeriod].substring(0, plan.price[currentPeriod].lastIndexOf('.')) : plan.price[currentPeriod]}
-                          {plan.price[currentPeriod].includes('.') && (
-                            <span className="text-[10px] align-top relative top-[3px] left-0.5">
-                              {plan.price[currentPeriod].substring(plan.price[currentPeriod].lastIndexOf('.'))}
-                            </span>
-                          )}
-                        </span>
-                        {plan.price[currentPeriod] !== '0' && <span className="text-xs text-n60 font-medium ml-0.5">/ {currentPeriod}</span>}
-                      </>
-                    ) : (
-                      <span className="text-base text-n60">Billed {currentPeriod}ly</span>
-                    )}
+            {pricingData.map((plan, idx) => {
+              const originalPrice = plan.price[currentPeriod];
+              const discPrice = currentPeriod === 'month' ? plan.price.discMonth : plan.price.discYear;
+              const hasDiscount = !!discPrice && discPrice !== originalPrice;
+              const displayPrice = hasDiscount ? discPrice : originalPrice;
+
+              return (
+                <div key={plan.id} className="border-x lg:first:border-l-0 first:border-l border-n20 lg:last:border-r-0 last:border-b flex flex-col group last:col-span-1 md:last:col-span-2 lg:last:col-span-1">
+                  <div className="h-8 flex items-end">
+                    <div className={`w-full h-0.5 transition-all duration-300 ${plan.color} ${plan.hoverH}`}></div>
                   </div>
-                </div>
+                  <div className="px-4 py-3 border-b border-n20 relative min-h-[80px]">
+                    {idx === 0 && <div className="h-[calc(100%+2px)] w-80 diagonal-lines border-y -top-px border-n20 absolute right-full"></div>}
+                    {idx === pricingData.length - 1 && <div className="h-[calc(100%+2px)] w-80 diagonal-lines border-y -top-px border-n20 absolute left-full"></div>}
+                    {idx !== 0 && <div className="h-[calc(100%+2px)] w-4 xl:w-6 diagonal-lines border-y -top-px border-n20 absolute right-full"></div>}
+                    <h3 className="title text-xl text-n100">{plan.name}</h3>
+                    
+                    <div className="flex items-baseline flex-col gap-x-2 mt-1 min-h-[48px]">
+                      <div className={`flex items-baseline ${displayPrice !== 'Custom' ? 'gap-1' : ''}`}>
+                        {displayPrice !== 'Custom' ? (
+                          <>
+                            <span className="text-xs font-bold text-n100">{plan.currency}</span>
+                            <span className="text-xl font-semibold text-n100">
+                              {displayPrice.includes('.') ? displayPrice.substring(0, displayPrice.lastIndexOf('.')) : displayPrice}
+                              {displayPrice.includes('.') && (
+                                <span className="text-[10px] align-top relative top-[3px] left-0.5">
+                                  {displayPrice.substring(displayPrice.lastIndexOf('.'))}
+                                </span>
+                              )}
+                            </span>
+                            {displayPrice !== '0' && <span className="text-xs text-n70 font-medium ml-0.5">/ {currentPeriod}</span>}
+                          </>
+                        ) : (
+                          <span className="text-base text-n60">Billed {currentPeriod}ly</span>
+                        )}
+                      </div>
+                      {hasDiscount && (
+                        <div className="relative text-sm text-n50 font-medium">
+                          <span>
+                            {plan.currency}{originalPrice.includes('.') ? originalPrice.substring(0, originalPrice.lastIndexOf('.')) : originalPrice}
+                            {originalPrice.includes('.') && (
+                              <span className="text-[10px] align-top relative top-[2px]">
+                                {originalPrice.substring(originalPrice.lastIndexOf('.'))}
+                              </span>
+                            )}
+                          </span>
+                          <div className="absolute top-[60%] left-0 w-full h-px bg-n60 opacity-60"></div>
+                        </div>
+                      )}
+                    </div>
+                  </div>
                 <div className="p-4 grow">
                   <ul className="space-y-2">
                     {plan.features.map((feature, fIdx) => (
@@ -430,8 +451,9 @@ export default function PricingPage() {
                     </svg>
                   </button>
                 </div>
-              </div>
-            ))}
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
