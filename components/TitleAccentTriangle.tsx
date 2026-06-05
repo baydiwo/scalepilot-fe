@@ -1,7 +1,7 @@
 import React from 'react';
 
 interface TitleAccentTriangleProps {
-  color?: 'green' | 'red';
+  color?: 'green' | 'red' | 'brand';
   className?: string;
 }
 
@@ -16,7 +16,7 @@ const TitleAccentTriangle: React.FC<TitleAccentTriangleProps> = ({
       viewBox="0 0 56 12"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={`${color === 'red' ? 'text-spred' : 'text-spgreen'} ${className}`}
+      className={`${color === 'red' ? 'text-spred' : color === 'brand' ? 'text-brand' : 'text-spgreen'} ${className}`}
     >
       <path
         d="M0 12L56 0V12H0Z"

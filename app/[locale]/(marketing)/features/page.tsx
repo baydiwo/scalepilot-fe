@@ -1,16 +1,23 @@
 import React from 'react';
+import { getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
 import TitleAccentTriangle from '@/components/TitleAccentTriangle';
+import FeatSolution from '@/components/FeatSolution';
 import BlockDiagonal from '@/components/BlockDiagonal';
 import CtaGeneral from '@/components/CtaGeneral';
-import SolList from '@/components/SolList';
 
-export const metadata: Metadata = {
-  title: 'Solutions | ScalePilot',
-  description: 'Solusi Nyata untuk Masalah Meta Ads Anda.',
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'FeaturesPage' });
+  return {
+    title: t('title'),
+    description: t('description'),
+  };
+}
 
-export default function SolutionsPage() {
+export default async function FeaturesPage() {
+  const t = await getTranslations('FeaturesPage');
+  
   return (
     <div>
       <section className="wrapper pt-20 pb-12">
@@ -19,18 +26,20 @@ export default function SolutionsPage() {
             <TitleAccentTriangle color="brand" className="w-12" />
           </div>
           <h1 className="text-n100 text-5xl md:text-7xl font-semibold leading-tight tracking-tight mb-6">
-            Solusi Nyata untuk <br className="hidden md:block" />
-            <span className="text-brand">Masalah Meta Ads Anda.</span>
+            {t('headline')} <br className="hidden md:block" />
+            <span className="text-brand">{t('headlineSpan')}</span>
           </h1>
           <p className="text-n70 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-            Hentikan keboncosan dan scale kampanye pemenang Anda tanpa menghancurkan performa. Kami mengatasi pain points Anda dengan teknologi AI analitik terdepan.
+            {t('subheadline')}
           </p>
         </div>
       </section>
 
       <BlockDiagonal />
 
-      <SolList />
+      <section className="pb-20">
+        <FeatSolution />
+      </section>
 
       <CtaGeneral />
     </div>

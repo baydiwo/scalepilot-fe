@@ -1,8 +1,8 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { useTranslations, useLocale } from 'next-intl';
+import { Link, usePathname, useRouter } from '@/i18n/routing';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import IconMenu from './IconMenu';
@@ -10,21 +10,7 @@ import IconClose from './IconClose';
 import IconDownArrow from './IconDownArrow';
 import TitleAccentTriangle from './TitleAccentTriangle';
 import IconArrowUpRight from './IconArrowUpRight';
-
-// Data items
-const featureItems = [
-  { title: 'Verdict Engine', description: 'Real-time AI-powered decision system that moves beyond simple data.', icon: 'verdictengine-icon', link: '/features#feature-nav' },
-  { title: 'Action Hub', description: 'One-click command center for quick budget boosts and manual adjustments.', icon: 'actionhub-icon', link: '/features#feature-nav' },
-  { title: 'Scale Tracker', description: 'Full historical audit of every scaling decision and its marginal ROI impact.', icon: 'scaletracker-icon', link: '/features#feature-nav' },
-  { title: 'Budget Revert', description: 'Instantly undo underperforming scales and restore previous budget levels.', icon: 'budgetrevert-icon', link: '/features#feature-nav' },
-];
-
-const solutionsItems = [
-  { title: "Ambil Keputusan Lebih Cepat & Tepat", description: "Berhenti menganalisis iklan. Mulai bertindak dengan tepat.", image: "/img/faster-decisions.jpg", link: "/solutions#faster-decisions" },
-  { title: "Scale Kampanye Pemenang", description: "Anda punya winner. Jangan dibunuh karena salah scale.", image: "/img/scale-campaign.jpg", link: "/solutions#scale-winning" },
-  { title: "Perbaiki Iklan Boncos", description: "Dapatkan solusi instan untuk setiap kampanye yang menurun.", image: "/img/fix-ads.jpg", link: "/solutions#fix-underperforming" },
-  { title: "Kurangi Pemborosan Iklan", description: "Hentikan kebocoran anggaran yang tak terlihat sebelum kas terkuras.", image: "/img/ad-spend.jpg", link: "/solutions#reduce-wasted" }
-];
+import IconGlobe from './IconGlobe';
 
 const resourceItems = [
   { title: 'Blog', description: 'News and update about marketing, ad buying and ad management.', icon: 'blog-icon', link: '/blog' },
@@ -33,6 +19,8 @@ const resourceItems = [
 ];
 
 const TheNav: React.FC = () => {
+  const t = useTranslations('Nav');
+  const locale = useLocale();
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeMobileMenu, setActiveMobileMenu] = useState<string | null>(null);
@@ -42,6 +30,26 @@ const TheNav: React.FC = () => {
   const submenuContentRef = useRef<HTMLDivElement>(null);
   const leaveTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const pathname = usePathname();
+  const router = useRouter();
+
+  const featuresData = t.raw('featuresItems') as any[];
+  const featureItems = featuresData.map((feat, i) => ({
+    ...feat,
+    icon: ['verdictengine-icon', 'actionhub-icon', 'scaletracker-icon', 'budgetrevert-icon'][i],
+    link: '/features#feature-nav'
+  }));
+
+  const solutionsData = t.raw('solutionsItems') as any[];
+  const solutionsItems = solutionsData.map((sol, i) => ({
+    ...sol,
+    image: ['/img/faster-decisions.jpg', '/img/scale-campaign.jpg', '/img/fix-ads.jpg', '/img/ad-spend.jpg'][i],
+    link: ['/solutions#faster-decisions', '/solutions#scale-winning', '/solutions#fix-underperforming', '/solutions#reduce-wasted'][i]
+  }));
+
+  const toggleLanguage = () => {
+    const nextLocale = locale === 'id' ? 'en' : 'id';
+    router.replace(pathname, { locale: nextLocale });
+  };
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
@@ -134,34 +142,36 @@ const TheNav: React.FC = () => {
                 className={`cursor-pointer transition-all h-full px-2 outline-none ${activeMenu === 'features' ? 'text-n100 opacity-100' : 'text-n90'} ${activeMenu && activeMenu !== 'features' ? 'opacity-50' : ''}`} 
                 onMouseEnter={() => handleMouseEnter('features')}
               >
-                Features
+                {t('features')}
               </button>
               <button 
                 className={`cursor-pointer transition-all h-full px-2 outline-none ${activeMenu === 'solutions' ? 'text-n100 opacity-100' : 'text-n90'} ${activeMenu && activeMenu !== 'solutions' ? 'opacity-50' : ''}`} 
                 onMouseEnter={() => handleMouseEnter('solutions')}
               >
-                Solutions
+                {t('solutions')}
               </button>
               <button 
                 className={`cursor-pointer transition-all h-full px-2 outline-none ${activeMenu === 'resources' ? 'text-n100 opacity-100' : 'text-n90'} ${activeMenu && activeMenu !== 'resources' ? 'opacity-50' : ''}`} 
                 onMouseEnter={() => handleMouseEnter('resources')}
               >
-                Resources
+                {t('resources')}
               </button>
               <Link 
                 href="/pricing" 
                 className={`cursor-pointer transition-all h-full px-2 flex items-center ${activeMenu ? 'opacity-50' : ''}`} 
                 onMouseEnter={() => handleMouseEnter(null)}
               >
-                Pricing
+                {t('pricing')}
               </Link>
             </div>
           </div>
 
           <div className="flex items-center gap-4">
              <div className="hidden sm:flex items-center gap-2">
-                {/* <Link href="https://app.scalepilot.id" className="hover:bg-n100 hover:text-white border border-n20 h-11 text-sm lg:text-[15px] px-5 py-2 font-semibold transition-colors flex items-center">Log in</Link>
-                <Link href="https://app.scalepilot.id" className="h-11 hover:bg-n100 hover:text-white px-5 py-2 text-sm lg:text-base font-semibold bg-brand text-n100 transition-all flex items-center">Start free</Link> */}
+                <button onClick={toggleLanguage} className="p-2 border border-n20 rounded-full hover:bg-n10 transition-colors flex items-center justify-center" aria-label="Toggle language">
+                  <IconGlobe className="w-5 h-5 text-n100" />
+                  <span className="ml-1 text-xs font-semibold text-n100 uppercase">{locale}</span>
+                </button>
                 <Link href="/pricing" className="h-11 hover:bg-n100 hover:text-white px-5 py-2 text-sm lg:text-base font-semibold bg-brand text-n100 transition-all flex items-center">See Pricing &rarr;</Link>
              </div>
              <button className="lg:hidden p-2 text-n100 focus:outline-none" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>

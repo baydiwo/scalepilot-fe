@@ -1,4 +1,5 @@
 import React from 'react';
+import { getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
 import VisualGrid from '@/components/VisualGrid';
 import FeatHeroImage from '@/components/FeatHeroImage';
@@ -11,20 +12,29 @@ import FeatTestimonials from '@/components/FeatTestimonials';
 import CtaGeneral from '@/components/CtaGeneral';
 import FeatFlow from '@/components/FeatFlow';
 
-export const metadata: Metadata = {
-  title: 'ScalePilot | Decision Engine for Meta Ads',
-  description: 'Decide Faster. Scale Bigger. ScalePilot is the real-time verdict engine for Meta Ads. Scale winners instantly and stop losers before they burn your profits. Built for those who demand precision over data-noise.',
-  openGraph: {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'Hero' });
+  return {
     title: 'ScalePilot | Decision Engine for Meta Ads',
-    description: 'Decide Faster. Scale Bigger. ScalePilot is the real-time verdict engine for Meta Ads. Scale winners instantly and stop losers before they burn your profits.',
-    images: ['/scalepilot.png'],
-  },
-  twitter: {
-    card: 'summary_large_image',
-  },
-};
+    description: t('description'),
+    openGraph: {
+      title: 'ScalePilot | Decision Engine for Meta Ads',
+      description: t('description'),
+      images: ['/scalepilot.png'],
+    },
+    twitter: {
+      card: 'summary_large_image',
+    },
+  };
+}
 
-export default function Home() {
+export default async function Home() {
+  const tHero = await getTranslations('Hero');
+  const tProb = await getTranslations('Problem');
+  const tSol = await getTranslations('SolutionSection');
+  const tTesti = await getTranslations('Testimonials');
+
   return (
     <div>
       <section id="hero" className="wrapper">
@@ -35,11 +45,11 @@ export default function Home() {
           >
             <VisualGrid />
             <h1 className="text-n100 text-center text-[clamp(2.75rem,9vw,6rem)] leading-[0.95]">
-              Decide Faster.<br />
-              <span className="text-spgreen">Scale Bigger.</span>
+              {tHero('headline1')}<br />
+              <span className="text-spgreen">{tHero('headline1Span')}</span>
             </h1>
             <p className="px-4 md:px-0 mt-6 text-n80 text-base md:text-xl text-center max-w-xl">
-              ScalePilot is the real-time verdict engine for Meta Ads. Scale winners instantly and stop losers before they burn your profits. Built for those who demand precision over data-noise.
+              {tHero('description')}
             </p>
           </div>
           <div id="hero-cta" className="relative">
@@ -51,13 +61,13 @@ export default function Home() {
                 href="https://app.scalepilot.id"
                 className="p-4 font-semibold border-x border-brand hover:border-x-n100 bg-brand text-n100 transition duration-200 hover:bg-n100 hover:text-brand flex items-center"
               >
-                Start scaling now
+                {tHero('startScaling')}
               </a>
               <a
                 href="/features"
                 className="p-4 font-semibold border-x border-n20 text-n100 transition duration-200 hover:bg-n100 hover:border-n100 hover:text-white flex items-center"
               >
-                Explore features
+                {tHero('exploreFeatures')}
               </a>
             </div>
           </div>
@@ -77,17 +87,17 @@ export default function Home() {
               <div className="py-18">
                 <div className="flex gap-4 items-center mb-4">
                   <TitleAccentTriangle className="w-10" color="red" />
-                  <span className="font-medium text-sm text-spred">The Problem</span>
+                  <span className="font-medium text-sm text-spred">{tProb('tag')}</span>
                 </div>
                 <div className="grid lg:grid-cols-2">
                   <div className="max-w-xl">
                     <h2 className="text-n100 text-5xl md:text-5xl leading-none">
-                      Monitoring isn&apos;t Scaling. <span className="text-spred">It&apos;s Reacting.</span>
+                      {tProb('headline')} <span className="text-spred">{tProb('headlineSpan')}</span>
                     </h2>
                   </div>
                   <div className="mt-6 lg:mt-0 max-w-xl lg:px-14 xl:px-0">
                     <p className="leading-relaxed">
-                      Most tools give you more data. ScalePilot gives you more decisions. Don&apos;t just watch your spend, command it. Because every minute you spend &apos;analyzing&apos; is a minute your competitor spends scaling.
+                      {tProb('description')}
                     </p>
                   </div>
                 </div>
@@ -112,17 +122,17 @@ export default function Home() {
                     className="w-10"
                     color="green"
                   />
-                  <span className="font-medium text-sm text-spgreen">The Solution</span>
+                  <span className="font-medium text-sm text-spgreen">{tSol('tag')}</span>
                 </div>
                 <div className="grid lg:grid-cols-2">
                   <div className="max-w-xl">
                     <h2 className="text-n100 text-5xl md:text-5xl leading-none">
-                      <span className="text-brand-dark">Your Data. Our Engine.</span> Zero Guesswork.
+                      <span className="text-brand-dark">{tSol('headline')}</span> {tSol('headlineSpan')}
                     </h2>
                   </div>
                   <div className="mt-6 lg:mt-0 max-w-xl lg:px-14 xl:px-0">
                     <p className="leading-relaxed">
-                      ScalePilot provides you with the complete suite that helps you make better decisions to optimize your ad spend and get better ROAS. Connect data from your Meta ad platform and get AI-powered insights to improve your campaigns.
+                      {tSol('description')}
                     </p>
                   </div>
                 </div>
@@ -160,19 +170,17 @@ export default function Home() {
                     className="w-10"
                     color="green"
                   />
-                  <span className="font-medium text-sm">User&apos;s Stories</span>
+                  <span className="font-medium text-sm">{tTesti('tag')}</span>
                 </div>
                 <div className="grid lg:grid-cols-2">
                   <div className="max-w-xl">
-                    <h2 className="text-n100 text-5xl md:text-5xl leading-none">Others has scaled up. <span
+                    <h2 className="text-n100 text-5xl md:text-5xl leading-none">{tTesti('headline')} <span
                       className="text-brand-dark"
-                    >Successfully.</span>
+                    >{tTesti('headlineSpan')}</span>
                     </h2>
                   </div>
                   <div className="mt-6 lg:mt-0 max-w-xl lg:px-14 xl:px-0">
-                    <p className="leading-relaxed">From business owners, to professional marketers, to managers handling
-                      multiple clients with hundreds of ad accounts. Here&apos;s what they have to say about ScalePilot.
-                    </p>
+                    <p className="leading-relaxed">{tTesti('description')}</p>
                   </div>
                 </div>
               </div>

@@ -1,16 +1,23 @@
 import React from 'react';
+import { getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
 import TitleAccentTriangle from '@/components/TitleAccentTriangle';
-import FeatSolution from '@/components/FeatSolution';
 import BlockDiagonal from '@/components/BlockDiagonal';
 import CtaGeneral from '@/components/CtaGeneral';
+import SolList from '@/components/SolList';
 
-export const metadata: Metadata = {
-  title: 'Features | ScalePilot',
-  description: 'Explore the features of ScalePilot, the real-time verdict engine for Meta Ads.',
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'SolutionsPage' });
+  return {
+    title: t('title'),
+    description: t('description'),
+  };
+}
 
-export default function FeaturesPage() {
+export default async function SolutionsPage() {
+  const t = await getTranslations('SolutionsPage');
+  
   return (
     <div>
       <section className="wrapper pt-20 pb-12">
@@ -19,20 +26,18 @@ export default function FeaturesPage() {
             <TitleAccentTriangle color="brand" className="w-12" />
           </div>
           <h1 className="text-n100 text-5xl md:text-7xl font-semibold leading-tight tracking-tight mb-6">
-            Semua yang Anda butuhkan untuk <br className="hidden md:block" />
-            <span className="text-brand">scale dengan profit.</span>
+            {t('headline')} <br className="hidden md:block" />
+            <span className="text-brand">{t('headlineSpan')}</span>
           </h1>
           <p className="text-n70 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-            ScalePilot memberikan Anda serangkaian fitur lengkap yang membantu Anda mengambil keputusan lebih baik untuk mengoptimalkan ad spend dan mendapatkan ROAS yang lebih tinggi.
+            {t('subheadline')}
           </p>
         </div>
       </section>
 
       <BlockDiagonal />
 
-      <section className="pb-20">
-        <FeatSolution />
-      </section>
+      <SolList />
 
       <CtaGeneral />
     </div>

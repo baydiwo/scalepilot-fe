@@ -1,0 +1,141 @@
+{
+  "Nav": {
+    "solutions": "Solusi",
+    "features": "Fitur",
+    "pricing": "Harga",
+    "resources": "Sumber Daya",
+    "startScaling": "Mulai Scale Sekarang",
+    "bookDemo": "Jadwalkan Demo",
+    "featuresItems": [
+      {
+        "title": "Verdict Engine",
+        "description": "Sistem keputusan AI real-time yang melampaui data biasa."
+      },
+      {
+        "title": "Action Hub",
+        "description": "Pusat komando sekali klik untuk penyesuaian manual dan peningkatan budget."
+      },
+      {
+        "title": "Scale Tracker",
+        "description": "Audit historis lengkap untuk setiap keputusan scaling dan dampaknya pada ROI."
+      },
+      {
+        "title": "Budget Revert",
+        "description": "Batalkan peningkatan budget yang buruk secara instan."
+      }
+    ],
+    "solutionsItems": [
+      {
+        "title": "Ambil Keputusan Lebih Cepat & Tepat",
+        "description": "Berhenti menganalisis iklan. Mulai bertindak dengan tepat."
+      },
+      {
+        "title": "Scale Kampanye Pemenang",
+        "description": "Anda punya winner. Jangan dibunuh karena salah scale."
+      },
+      {
+        "title": "Perbaiki Iklan Boncos",
+        "description": "Dapatkan solusi instan untuk setiap kampanye yang menurun."
+      },
+      {
+        "title": "Kurangi Pemborosan Iklan",
+        "description": "Hentikan kebocoran anggaran yang tak terlihat sebelum kas terkuras."
+      }
+    ]
+  },
+  "Hero": {
+    "headline1": "Decide Faster.",
+    "headline1Span": "Scale Bigger.",
+    "description": "ScalePilot adalah mesin keputusan real-time untuk Meta Ads. Scale pemenang secara instan dan matikan yang boncos sebelum membakar profit Anda.",
+    "startScaling": "Mulai Scale Sekarang",
+    "exploreFeatures": "Eksplorasi Fitur"
+  },
+  "Problem": {
+    "tag": "The Problem",
+    "headline": "Memantau bukanlah Scaling.",
+    "headlineSpan": "Itu hanya Bereaksi.",
+    "description": "Sebagian besar alat memberi Anda lebih banyak data. ScalePilot memberi Anda lebih banyak keputusan. Jangan hanya perhatikan pengeluaran Anda, kendalikan. Karena setiap menit yang Anda habiskan untuk 'menganalisis' adalah menit yang dihabiskan pesaing Anda untuk scaling."
+  },
+  "SolutionSection": {
+    "tag": "The Solution",
+    "headline": "Data Anda. Mesin Kami.",
+    "headlineSpan": "Tanpa Tebak-tebakan.",
+    "description": "ScalePilot memberi Anda solusi lengkap yang membantu Anda mengambil keputusan lebih baik untuk optimasi budget dan mencapai ROAS lebih baik."
+  },
+  "Testimonials": {
+    "tag": "User's Stories",
+    "headline": "Mereka telah berhasil Scale Up.",
+    "headlineSpan": "Dengan Sukses.",
+    "description": "Dari pemilik bisnis, pemasar profesional, hingga manajer yang menangani ratusan akun iklan. Berikut kata mereka tentang ScalePilot."
+  },
+  "Features": {
+    "verdictEngine": {
+      "title": "Verdict Engine",
+      "subtitle": "Keputusan Iklan Otomatis & Berbasis Data di Ujung Jari Anda.",
+      "description": "Tinggalkan tebak-tebakan dan rapat evaluasi yang melelahkan. Verdict Engine ScalePilot menganalisis ribuan titik data iklan Anda secara real-time dan memberikan instruksi matematis yang pasti: Scale Up, Hold, atau Kill.<br/><br/><strong>Mengapa Fitur Ini Penting?</strong> Kebanyakan pengiklan menghabiskan waktu berjam-jam mencoba memahami mengapa sebuah kampanye tiba-tiba merugi. Mesin kami memproses kalkulasi rumit di latar belakang, membandingkan performa historis dengan metrik hari ini, sehingga Anda bisa langsung fokus pada eksekusi.",
+      "ctaText": "Lihat Cara Kerja Mesin Ini"
+    },
+    "actionHub": {
+      "title": "Action Hub",
+      "subtitle": "Pusat Komando Terpadu untuk Seluruh Operasi Iklan Meta Anda.",
+      "description": "Mengapa harus membuka puluhan tab Meta Ads Manager yang lambat dan berat? Eksekusi, jadwalkan, dan tinjau semua perubahan kritis pada iklan Anda dari satu dashboard kilat yang didesain untuk kecepatan.<br/><br/><strong>Mengapa Fitur Ini Penting?</strong> Kecepatan eksekusi adalah kunci di dunia iklan digital. Meta Ads Manager seringkali laggy dan membutuhkan banyak klik hanya untuk mematikan satu iklan. Action Hub mengubah alur kerja 30 menit menjadi tugas 30 detik.",
+      "ctaText": "Sederhanakan Alur Kerja Anda"
+    },
+    "scaleTracker": {
+      "title": "Scale Tracker",
+      "subtitle": "Kembangkan Iklan Pemenang Anda dengan Percaya Diri & Kendali Penuh.",
+      "description": "Menambahkan budget (Scaling) seringkali menjadi momen yang paling menakutkan karena berisiko merusak algoritma Meta. Pantau secara presisi bagaimana performa kampanye Anda bereaksi setiap detik setelah Anda menaikkan anggaran.<br/><br/><strong>Mengapa Fitur Ini Penting?</strong> Banyak bisnis mandek di pendapatan tertentu (revenue plateau) karena mereka takut melakukan scale up. Scale Tracker menghapus ketakutan tersebut dengan memberikan visibilitas total seperti instrumen kokpit pesawat.",
+      "ctaText": "Mulai Scaling Hari Ini"
+    },
+    "budgetRevert": {
+      "title": "Budget Revert",
+      "subtitle": "Scale Tanpa Rasa Takut. Batalkan Kesalahan Secara Instan.",
+      "description": "Inilah jaring pengaman (safety net) finansial terkuat untuk bisnis Anda. Jika keputusan scaling membuat performa iklan Anda tiba-tiba hancur, kembalikan budget ke titik aman sebelumnya hanya dalam hitungan detik.<br/><br/><strong>Mengapa Fitur Ini Penting?</strong> Setiap kali Anda menaikkan anggaran, Meta berpotensi me-reset fase pembelajaran (Learning Phase), yang bisa membuat Cost Per Acquisition (CPA) naik drastis. Dengan Budget Revert, Anda memiliki \"Tombol Undo\" untuk kesalahan yang bernilai jutaan rupiah.",
+      "ctaText": "Scale dengan Aman Sekarang"
+    }
+  },
+  "Solutions": {
+    "fasterDecisions": {
+      "title": "Ambil Keputusan Lebih Cepat & Tepat",
+      "problem": "Sebagai pengiklan, Anda terus-menerus tenggelam dalam lautan data. Anda harus mengekspor CSV dari Meta, mencocokkannya dengan data Google Analytics, memuatnya ke tabulasi spreadsheet yang rumit, dan berdebat dengan metrik yang saling bertentangan. Proses panjang ini menyebabkan Analysis Paralysis—menunda keputusan kritis yang seharusnya dieksekusi hari ini juga, sehingga momentum emas terlewatkan.",
+      "solution": "ScalePilot bertindak sebagai analis data pribadi Anda yang bekerja dalam hitungan milidetik. Kami memotong semua kebisingan dashboard konvensional. Kami secara otomatis mensintesis ribuan baris data metrik menjadi sebuah verdict (keputusan akhir: Scale, Hold, Kill) yang jernih, transparan, dan dapat langsung ditindaklanjuti.",
+      "benefit": "Dapatkan kembali jam kerja produktif Anda. Anda dapat melakukan rutinitas optimasi harian sambil meminum kopi pagi Anda dalam waktu 5 menit, dan bertindaklah mengkapitalisasi tren winning campaign berhari-hari sebelum kompetitor Anda menyadarinya.",
+      "cta": "Percepat Alur Kerja Anda"
+    },
+    "scaleWinning": {
+      "title": "Scale Kampanye Pemenang",
+      "problem": "Ini adalah dilema klasik Meta Ads: Anda akhirnya menemukan satu iklan (creative atau audience) yang bekerja dengan luar biasa di anggaran rendah. Namun, impian buruk terjadi setiap kali Anda melipatgandakan anggarannya; performanya hancur berantakan. Algoritma kebingungan, CPA meroket tajam, ROAS anjlok, dan momentum serta potensi pendapatan besar lenyap seketika.",
+      "solution": "Tinggalkan metode scaling yang serampangan. ScalePilot memungkinkan pendekatan scaling yang inkremental, tersistem, terpantau detik demi detik, dan direkomendasikan penuh oleh analisis kuantitatif AI. Kami melacak metrik Marginal ROAS untuk memastikan Anda memaksimalkan profitabilitas, selagi perlahan membuka keran volume pengeluaran.",
+      "benefit": "Keluar dari zona stagnan. Tembus batas stagnasi pendapatan (revenue plateau) bisnis Anda secara terukur, konsisten, terprediksi, dan yang terpenting: terbukti menguntungkan secara Net Margin.",
+      "cta": "Buka Potensi Skala Anda"
+    },
+    "fixUnderperforming": {
+      "title": "Perbaiki Iklan Boncos",
+      "problem": "Ada kalanya kampanye andalan yang biasa menjadi tulang punggung omzet Anda tiba-tiba mati perlahan. Anda terus membakar uang pada iklan yang dulunya bekerja sangat baik ini, namun Anda buta terhadap alasan pastinya. Apakah audiens sudah bosan? Apakah penawarannya basi? Ketidaktahuan ini membuat Anda bingung bagaimana cara memulihkan kinerjanya.",
+      "solution": "Platform kami menawarkan identifikasi instan terhadap fenomena creative fatigue (kelelahan materi iklan). ScalePilot tidak hanya memberitahu Anda bahwa performa sedang turun, tetapi juga menyoroti titik masalahnya (seperti frekuensi yang terlalu tinggi di audiens sempit) dan menyajikan langkah actionable langsung untuk melakukan rotasi iklan, pivot angle, atau jeda paksa untuk pemulihan audiens.",
+      "benefit": "Identifikasi dan potong kerugian secara instan. Matikan iklan yang menguras kas (losers) dengan tanpa ragu, serta deteksi kelelahan kampanye pemenang (fatigue) sejak dini sebelum mereka mengisap habis sisa budget harian Anda tanpa memberikan hasil.",
+      "cta": "Hentikan Keboncosan Sekarang"
+    },
+    "reduceWasted": {
+      "title": "Kurangi Pemborosan Iklan",
+      "problem": "Coba hitung berapa banyak uang yang hilang bulan lalu karena Anda (atau staf agensi Anda) telat mematikan kampanye yang gagal. Terlalu sering pemasar membiarkan iklan berkinerja buruk berjalan terlalu lama dengan harapan kosong bahwa esok hari performanya akan membaik. Keterlambatan pengecekan 1-2 hari saja sudah berujung pada kerugian jutaan rupiah yang tidak bisa dikembalikan.",
+      "solution": "Kami menggantikan harapan kosong dengan disiplin berbasis data. ScalePilot menerapkan kontrol anggaran yang sangat ketat melalui fitur pembatasan (kill rules otomatis), pembatalan skala instan (rollback), dan peringatan proaktif untuk menghentikan pendanaan pada setiap sen yang gagal mencapai target Return on Ad Spend bisnis Anda.",
+      "benefit": "Pertahanan yang solid menciptakan ruang untuk pertumbuhan. Lindungi margin profit perusahaan Anda secara agresif, potong kebocoran anggaran yang tak terlihat, dan pastikan setiap lembar rupiah yang Anda investasikan benar-benar bekerja sekeras mungkin untuk mendatangkan omzet riil bagi bisnis Anda.",
+      "cta": "Lindungi Margin Profit Anda"
+    }
+  },
+  "FeaturesPage": {
+    "title": "Features | ScalePilot",
+    "description": "Explore the features of ScalePilot, the real-time verdict engine for Meta Ads.",
+    "headline": "Semua yang Anda butuhkan untuk",
+    "headlineSpan": "scale dengan profit.",
+    "subheadline": "ScalePilot memberikan Anda serangkaian fitur lengkap yang membantu Anda mengambil keputusan lebih baik untuk mengoptimalkan ad spend dan mendapatkan ROAS yang lebih tinggi."
+  },
+  "SolutionsPage": {
+    "title": "Solutions | ScalePilot",
+    "description": "Solusi Nyata untuk Masalah Meta Ads Anda.",
+    "headline": "Solusi Nyata untuk",
+    "headlineSpan": "Masalah Meta Ads Anda.",
+    "subheadline": "Hentikan keboncosan dan scale kampanye pemenang Anda tanpa menghancurkan performa. Kami mengatasi pain points Anda dengan teknologi AI analitik terdepan."
+  }
+}

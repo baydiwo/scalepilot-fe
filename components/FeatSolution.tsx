@@ -3,48 +3,24 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 
+import { useTranslations } from 'next-intl';
+
 const DURATION = 8000;
 
-const features = [
-  {
-    title: 'Verdict Engine',
-    subtitle: 'Keputusan Iklan Otomatis & Berbasis Data di Ujung Jari Anda.',
-    description: 'Tinggalkan tebak-tebakan dan rapat evaluasi yang melelahkan. Verdict Engine ScalePilot menganalisis ribuan titik data iklan Anda secara real-time dan memberikan instruksi matematis yang pasti: Scale Up, Hold, atau Kill.<br/><br/><strong>Mengapa Fitur Ini Penting?</strong> Kebanyakan pengiklan menghabiskan waktu berjam-jam mencoba memahami mengapa sebuah kampanye tiba-tiba merugi. Mesin kami memproses kalkulasi rumit di latar belakang, membandingkan performa historis dengan metrik hari ini, sehingga Anda bisa langsung fokus pada eksekusi.',
-    icon: '/img/verdictengine-icon.svg',
-    image: '/img/tab-verdict-engine.png',
-    link: '#',
-    ctaText: 'Lihat Cara Kerja Mesin Ini',
-  },
-  {
-    title: 'Action Hub',
-    subtitle: 'Pusat Komando Terpadu untuk Seluruh Operasi Iklan Meta Anda.',
-    description: 'Mengapa harus membuka puluhan tab Meta Ads Manager yang lambat dan berat? Eksekusi, jadwalkan, dan tinjau semua perubahan kritis pada iklan Anda dari satu dashboard kilat yang didesain untuk kecepatan.<br/><br/><strong>Mengapa Fitur Ini Penting?</strong> Kecepatan eksekusi adalah kunci di dunia iklan digital. Meta Ads Manager seringkali laggy dan membutuhkan banyak klik hanya untuk mematikan satu iklan. Action Hub mengubah alur kerja 30 menit menjadi tugas 30 detik.',
-    icon: '/img/actionhub-icon.svg',
-    image: '/img/tab-action-hub.png',
-    link: '#',
-    ctaText: 'Sederhanakan Alur Kerja Anda',
-  },
-  {
-    title: 'Scale Tracker',
-    subtitle: 'Kembangkan Iklan Pemenang Anda dengan Percaya Diri & Kendali Penuh.',
-    description: 'Menambahkan budget (Scaling) seringkali menjadi momen yang paling menakutkan karena berisiko merusak algoritma Meta. Pantau secara presisi bagaimana performa kampanye Anda bereaksi setiap detik setelah Anda menaikkan anggaran.<br/><br/><strong>Mengapa Fitur Ini Penting?</strong> Banyak bisnis mandek di pendapatan tertentu (revenue plateau) karena mereka takut melakukan scale up. Scale Tracker menghapus ketakutan tersebut dengan memberikan visibilitas total seperti instrumen kokpit pesawat.',
-    icon: '/img/scaletracker-icon.svg',
-    image: '/img/tab-scale-tracker.png',
-    link: '#',
-    ctaText: 'Mulai Scaling Hari Ini',
-  },
-  {
-    title: 'Budget Revert',
-    subtitle: 'Scale Tanpa Rasa Takut. Batalkan Kesalahan Secara Instan.',
-    description: 'Inilah jaring pengaman (safety net) finansial terkuat untuk bisnis Anda. Jika keputusan scaling membuat performa iklan Anda tiba-tiba hancur, kembalikan budget ke titik aman sebelumnya hanya dalam hitungan detik.<br/><br/><strong>Mengapa Fitur Ini Penting?</strong> Setiap kali Anda menaikkan anggaran, Meta berpotensi me-reset fase pembelajaran (Learning Phase), yang bisa membuat Cost Per Acquisition (CPA) naik drastis. Dengan Budget Revert, Anda memiliki &quot;Tombol Undo&quot; untuk kesalahan yang bernilai jutaan rupiah.',
-    icon: '/img/budgetrevert-icon.svg',
-    image: '/img/tab-budget-revert.png',
-    link: '#',
-    ctaText: 'Scale dengan Aman Sekarang',
-  },
-];
-
 const FeatSolution: React.FC = () => {
+  const t = useTranslations('Features');
+  const featureKeys = ['verdictEngine', 'actionHub', 'scaleTracker', 'budgetRevert'] as const;
+  
+  const features = featureKeys.map((key, idx) => ({
+    title: t(`${key}.title`),
+    subtitle: t(`${key}.subtitle`),
+    description: t.raw(`${key}.description`),
+    ctaText: t(`${key}.ctaText`),
+    icon: ['/img/verdictengine-icon.svg', '/img/actionhub-icon.svg', '/img/scaletracker-icon.svg', '/img/budgetrevert-icon.svg'][idx],
+    image: ['/img/tab-verdict-engine.png', '/img/tab-action-hub.png', '/img/tab-scale-tracker.png', '/img/tab-budget-revert.png'][idx],
+    link: '#'
+  }));
+
   const [featSelected, setFeatSelected] = useState(0);
   const [key, setKey] = useState(0); // For resetting animation
   const timerRef = useRef<NodeJS.Timeout | null>(null);

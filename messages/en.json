@@ -1,0 +1,141 @@
+{
+  "Nav": {
+    "solutions": "Solutions",
+    "features": "Features",
+    "pricing": "Pricing",
+    "resources": "Resources",
+    "startScaling": "Start scaling now",
+    "bookDemo": "Book a Demo",
+    "featuresItems": [
+      {
+        "title": "Verdict Engine",
+        "description": "Real-time AI-powered decision system that moves beyond simple data."
+      },
+      {
+        "title": "Action Hub",
+        "description": "One-click command center for quick budget boosts and manual adjustments."
+      },
+      {
+        "title": "Scale Tracker",
+        "description": "Full historical audit of every scaling decision and its marginal ROI impact."
+      },
+      {
+        "title": "Budget Revert",
+        "description": "Instantly undo underperforming scales and restore previous budget levels."
+      }
+    ],
+    "solutionsItems": [
+      {
+        "title": "Make faster decisions",
+        "description": "Stop analyzing ads. Start acting on them."
+      },
+      {
+        "title": "Scale Winning Campaigns",
+        "description": "You have a winner. Now don't kill it, because winning is easy, scaling is hard."
+      },
+      {
+        "title": "Fix Underperforming Ads",
+        "description": "Get clear, actionable fixes for every underperforming campaign."
+      },
+      {
+        "title": "Reduce Wasted Ad Spend",
+        "description": "You're losing money, but most of the time you just don't see it yet."
+      }
+    ]
+  },
+  "Hero": {
+    "headline1": "Decide Faster.",
+    "headline1Span": "Scale Bigger.",
+    "description": "ScalePilot is the real-time verdict engine for Meta Ads. Scale winners instantly and stop losers before they burn your profits. Built for those who demand precision over data-noise.",
+    "startScaling": "Start scaling now",
+    "exploreFeatures": "Explore features"
+  },
+  "Problem": {
+    "tag": "The Problem",
+    "headline": "Monitoring isn't Scaling.",
+    "headlineSpan": "It's Reacting.",
+    "description": "Most tools give you more data. ScalePilot gives you more decisions. Don't just watch your spend, command it. Because every minute you spend 'analyzing' is a minute your competitor spends scaling."
+  },
+  "SolutionSection": {
+    "tag": "The Solution",
+    "headline": "Your Data. Our Engine.",
+    "headlineSpan": "Zero Guesswork.",
+    "description": "ScalePilot provides you with the complete suite that helps you make better decisions to optimize your ad spend and get better ROAS. Connect data from your Meta ad platform and get AI-powered insights to improve your campaigns."
+  },
+  "Testimonials": {
+    "tag": "User's Stories",
+    "headline": "Others has scaled up.",
+    "headlineSpan": "Successfully.",
+    "description": "From business owners, to professional marketers, to managers handling multiple clients with hundreds of ad accounts. Here's what they have to say about ScalePilot."
+  },
+  "Features": {
+    "verdictEngine": {
+      "title": "Verdict Engine",
+      "subtitle": "Automated & Data-Driven Ad Decisions at Your Fingertips.",
+      "description": "Leave behind the guesswork and exhausting evaluation meetings. ScalePilot's Verdict Engine analyzes thousands of your ad data points in real-time and provides definitive mathematical instructions: Scale Up, Hold, or Kill.<br/><br/><strong>Why This Feature Matters:</strong> Most advertisers spend hours trying to understand why a campaign suddenly loses money. Our engine processes complex calculations in the background, comparing historical performance with today's metrics, so you can immediately focus on execution.",
+      "ctaText": "See How This Engine Works"
+    },
+    "actionHub": {
+      "title": "Action Hub",
+      "subtitle": "The Unified Command Center for All Your Meta Ad Operations.",
+      "description": "Why open dozens of slow, heavy Meta Ads Manager tabs? Execute, schedule, and review all critical changes to your ads from a single lightning-fast dashboard designed for speed.<br/><br/><strong>Why This Feature Matters:</strong> Execution speed is key in the digital ad world. Meta Ads Manager is often laggy and requires multiple clicks just to pause a single ad. Action Hub turns a 30-minute workflow into a 30-second task.",
+      "ctaText": "Streamline Your Workflow"
+    },
+    "scaleTracker": {
+      "title": "Scale Tracker",
+      "subtitle": "Grow Your Winning Ads with Confidence & Total Control.",
+      "description": "Adding budget (Scaling) is often the most terrifying moment because it risks breaking Meta's algorithm. Precisely monitor how your campaign performance reacts every second after you increase the budget.<br/><br/><strong>Why This Feature Matters:</strong> Many businesses are stuck at a revenue plateau because they are afraid to scale up. Scale Tracker eliminates that fear by providing total visibility, much like an aircraft's cockpit instruments.",
+      "ctaText": "Start Scaling Today"
+    },
+    "budgetRevert": {
+      "title": "Budget Revert",
+      "subtitle": "Scale Without Fear. Undo Mistakes Instantly.",
+      "description": "This is the strongest financial safety net for your business. If a scaling decision suddenly ruins your ad performance, revert the budget back to its previous safe point in mere seconds.<br/><br/><strong>Why This Feature Matters:</strong> Every time you increase a budget, Meta has the potential to reset the Learning Phase, which can cause Cost Per Acquisition (CPA) to spike dramatically. With Budget Revert, you have an \"Undo Button\" for mistakes that could cost millions of rupiah.",
+      "ctaText": "Scale Safely Now"
+    }
+  },
+  "Solutions": {
+    "fasterDecisions": {
+      "title": "Make Decisions Faster",
+      "problem": "As an advertiser, you are constantly drowning in a sea of data. You have to export CSVs from Meta, match them with Google Analytics data, load them into complex spreadsheets, and argue over conflicting metrics. This lengthy process causes Analysis Paralysis—delaying critical decisions that should be executed today, causing golden momentum to slip away.",
+      "solution": "ScalePilot acts as your personal data analyst working in milliseconds. We cut through all the noise of conventional dashboards. We automatically synthesize thousands of rows of metric data into a crystal clear, transparent, and instantly actionable verdict (Scale, Hold, Kill).",
+      "benefit": "Reclaim your productive hours. You can perform your daily optimization routine while drinking your morning coffee in 5 minutes, and take action to capitalize on winning campaign trends days before your competitors even notice them.",
+      "cta": "Speed Up Your Workflow"
+    },
+    "scaleWinning": {
+      "title": "Scale Winning Campaigns",
+      "problem": "It's the classic Meta Ads dilemma: You finally find one ad (creative or audience) that works exceptionally well on a low budget. But the nightmare unfolds every time you double the budget; the performance falls apart. The algorithm gets confused, CPA skyrockets, ROAS plummets, and your momentum along with massive revenue potential vanishes instantly.",
+      "solution": "Abandon reckless scaling methods. ScalePilot enables an incremental, systematized scaling approach that is monitored second by second and fully recommended by quantitative AI analysis. We track Marginal ROAS metrics to ensure you maximize profitability while slowly opening the tap on expenditure volume.",
+      "benefit": "Break out of the stagnant zone. Shatter your business's revenue plateau in a measurable, consistent, predictable way, and most importantly: proven to be profitable by Net Margin.",
+      "cta": "Unlock Your Scaling Potential"
+    },
+    "fixUnderperforming": {
+      "title": "Fix Underperforming Ads",
+      "problem": "There are times when a flagship campaign that usually serves as the backbone of your revenue suddenly dies a slow death. You continue to burn money on this once highly-effective ad, but you are blind to the exact reason why. Are audiences bored? Is the offer stale? This ignorance leaves you confused about how to recover its performance.",
+      "solution": "Our platform offers instant identification of the creative fatigue phenomenon. ScalePilot doesn't just tell you that performance is dropping; it highlights the core issue (such as frequency being too high within a narrow audience) and provides immediate actionable steps to rotate ads, pivot angles, or force a pause to let the audience recover.",
+      "benefit": "Identify and cut your losses instantly. Kill cash-draining ads (losers) without hesitation, and detect winning campaign fatigue early before they suck up the rest of your daily budget with zero returns.",
+      "cta": "Stop the Bleeding Now"
+    },
+    "reduceWasted": {
+      "title": "Reduce Wasted Ad Spend",
+      "problem": "Try to calculate how much money was lost last month because you (or your agency staff) were late to pause a failing campaign. Far too often, marketers let poorly performing ads run for too long with the false hope that performance will improve tomorrow. A checking delay of just 1-2 days already results in millions of rupiah in irrecoverable losses.",
+      "solution": "We replace false hope with data-driven discipline. ScalePilot implements ultra-strict budget controls via automated kill rules, instant scale reversals (rollback), and proactive alerts to halt funding on every cent that fails to hit your business's Return on Ad Spend targets.",
+      "benefit": "Solid defense creates room for growth. Aggressively protect your company's profit margins, cut invisible budget leaks, and ensure every single rupiah you invest works as hard as possible to generate real revenue for your business.",
+      "cta": "Protect Your Profit Margins"
+    }
+  },
+  "FeaturesPage": {
+    "title": "Features | ScalePilot",
+    "description": "Explore the features of ScalePilot, the real-time verdict engine for Meta Ads.",
+    "headline": "Everything you need to",
+    "headlineSpan": "scale profitably.",
+    "subheadline": "ScalePilot provides you with the complete suite that helps you make better decisions to optimize your ad spend and get better ROAS."
+  },
+  "SolutionsPage": {
+    "title": "Solutions | ScalePilot",
+    "description": "Real Solutions for Your Meta Ads Problems.",
+    "headline": "Real Solutions for",
+    "headlineSpan": "Your Meta Ads Problems.",
+    "subheadline": "Stop the bleeding and scale your winning campaigns without breaking performance. We solve your pain points with leading analytic AI technology."
+  }
+}
