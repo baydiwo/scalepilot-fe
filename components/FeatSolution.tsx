@@ -8,35 +8,39 @@ const DURATION = 8000;
 const features = [
   {
     title: 'Verdict Engine',
-    subtitle: 'Real-time AI-powered decision system that moves beyond simple data.',
-    description: 'The analytical brain of ScalePilot. It processes dozens of real-time metrics, from ROAS trends to spend velocity, to deliver clear, 7 actionable commands. It eliminates decision fatigue by telling you exactly what to do next.',
+    subtitle: 'Keputusan Iklan Otomatis & Berbasis Data di Ujung Jari Anda.',
+    description: 'Tinggalkan tebak-tebakan dan rapat evaluasi yang melelahkan. Verdict Engine ScalePilot menganalisis ribuan titik data iklan Anda secara real-time dan memberikan instruksi matematis yang pasti: Scale Up, Hold, atau Kill.<br/><br/><strong>Mengapa Fitur Ini Penting?</strong> Kebanyakan pengiklan menghabiskan waktu berjam-jam mencoba memahami mengapa sebuah kampanye tiba-tiba merugi. Mesin kami memproses kalkulasi rumit di latar belakang, membandingkan performa historis dengan metrik hari ini, sehingga Anda bisa langsung fokus pada eksekusi.',
     icon: '/img/verdictengine-icon.svg',
     image: '/img/tab-verdict-engine.png',
     link: '#',
+    ctaText: 'Lihat Cara Kerja Mesin Ini',
   },
   {
     title: 'Action Hub',
-    subtitle: 'Real-time command center for quick budget boosts and manual adjustments.',
-    description: 'Your central command for execution. No more jumping between Meta Ads Manager tabs. Execute budget changes, pause losing ads, or duplicate winners with a single click directly from the ScalePilot dashboard.',
+    subtitle: 'Pusat Komando Terpadu untuk Seluruh Operasi Iklan Meta Anda.',
+    description: 'Mengapa harus membuka puluhan tab Meta Ads Manager yang lambat dan berat? Eksekusi, jadwalkan, dan tinjau semua perubahan kritis pada iklan Anda dari satu dashboard kilat yang didesain untuk kecepatan.<br/><br/><strong>Mengapa Fitur Ini Penting?</strong> Kecepatan eksekusi adalah kunci di dunia iklan digital. Meta Ads Manager seringkali laggy dan membutuhkan banyak klik hanya untuk mematikan satu iklan. Action Hub mengubah alur kerja 30 menit menjadi tugas 30 detik.',
     icon: '/img/actionhub-icon.svg',
     image: '/img/tab-action-hub.png',
     link: '#',
+    ctaText: 'Sederhanakan Alur Kerja Anda',
   },
   {
     title: 'Scale Tracker',
-    subtitle: 'Full historical audit of every scaling decision and its marginal ROI impact.',
-    description: 'The ultimate learning machine for your scaling strategy. It automatically logs every budget adjustment and its marginal impact on performance, building a historical database of your scaling &quot;hits and misses&quot; so you can refine your strategy over time.',
+    subtitle: 'Kembangkan Iklan Pemenang Anda dengan Percaya Diri & Kendali Penuh.',
+    description: 'Menambahkan budget (Scaling) seringkali menjadi momen yang paling menakutkan karena berisiko merusak algoritma Meta. Pantau secara presisi bagaimana performa kampanye Anda bereaksi setiap detik setelah Anda menaikkan anggaran.<br/><br/><strong>Mengapa Fitur Ini Penting?</strong> Banyak bisnis mandek di pendapatan tertentu (revenue plateau) karena mereka takut melakukan scale up. Scale Tracker menghapus ketakutan tersebut dengan memberikan visibilitas total seperti instrumen kokpit pesawat.',
     icon: '/img/scaletracker-icon.svg',
     image: '/img/tab-scale-tracker.png',
     link: '#',
+    ctaText: 'Mulai Scaling Hari Ini',
   },
   {
     title: 'Budget Revert',
-    subtitle: 'Instantly undo underperforming scales and restore previous budget levels.',
-    description: 'The safety net for aggressive scaling. If a budget increase doesn&apos;t yield the expected gains within 24-72 hours, the Budget Revert Engine lets you undo the change with one click, restoring your previous budget and protecting your profits from &quot;scale-up crashes&quot;.',
+    subtitle: 'Scale Tanpa Rasa Takut. Batalkan Kesalahan Secara Instan.',
+    description: 'Inilah jaring pengaman (safety net) finansial terkuat untuk bisnis Anda. Jika keputusan scaling membuat performa iklan Anda tiba-tiba hancur, kembalikan budget ke titik aman sebelumnya hanya dalam hitungan detik.<br/><br/><strong>Mengapa Fitur Ini Penting?</strong> Setiap kali Anda menaikkan anggaran, Meta berpotensi me-reset fase pembelajaran (Learning Phase), yang bisa membuat Cost Per Acquisition (CPA) naik drastis. Dengan Budget Revert, Anda memiliki &quot;Tombol Undo&quot; untuk kesalahan yang bernilai jutaan rupiah.',
     icon: '/img/budgetrevert-icon.svg',
     image: '/img/tab-budget-revert.png',
     link: '#',
+    ctaText: 'Scale dengan Aman Sekarang',
   },
 ];
 
@@ -123,8 +127,11 @@ const FeatSolution: React.FC = () => {
                 <span className="font-normal">{features[featSelected].title.split(' ')[1]}</span>
               </span>
               <h4 className="text-spgreen text-xl lg:text-2xl mb-4">{features[featSelected].subtitle}</h4>
-              <p className="text-n100 font-medium text-base lg:text-lg leading-relaxed" dangerouslySetInnerHTML={{ __html: features[featSelected].description }}>
+              <p className="text-n100 font-medium text-base lg:text-lg leading-relaxed mb-8" dangerouslySetInnerHTML={{ __html: features[featSelected].description }}>
               </p>
+              <a href={features[featSelected].link} className="inline-flex items-center justify-center bg-brand hover:bg-brand-dark text-white font-semibold py-3 px-6 rounded-full transition-colors duration-200">
+                {features[featSelected].ctaText}
+              </a>
             </div>
           </div>
           <div className="p-4">

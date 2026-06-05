@@ -12,29 +12,29 @@ const footers = [
   {
     title: "Solutions",
     menus: [
-      { title: "Meta Ad Optimization", link: "/" },
-      { title: "Verdict Engine", link: "/" },
-      { title: "Scale Tracker", link: "/" },
-      { title: "Action Hub", link: "/" },
-      { title: "Scale Intelligence", link: "/" },
-      { title: "Auto-Scaling", link: "/" },
+      { title: "Meta Ad Optimization", link: "/solutions/meta-ad-optimization" },
+      { title: "Verdict Engine", link: "/features/verdict-engine" },
+      { title: "Scale Tracker", link: "/features/scale-tracker" },
+      { title: "Action Hub", link: "/features/action-hub" },
+      { title: "Scale Intelligence", link: "/features/scale-intelligence" },
+      { title: "Auto-Scaling", link: "/features/auto-scaling" },
     ]
   },
   {
     title: "Resources",
     menus: [
-      { title: "Why ScalePilot", link: "/" },
-      { title: "Support", link: "/" },
-      { title: "Community", link: "/" },
-      { title: "Knowledge Base", link: "/" }
+      { title: "Why ScalePilot", link: "/why-scalepilot" },
+      { title: "Support", link: "/support" },
+      { title: "Community", link: "/community" },
+      { title: "Knowledge Base", link: "/knowledge-base" }
     ]
   },
   {
     title: "Company",
     menus: [
-      { title: "About Us", link: "/" },
-      { title: "Blog", link: "/" },
-      { title: "Brand Assets", link: "/" }
+      { title: "About Us", link: "/about-us" },
+      { title: "Blog", link: "/blog" },
+      { title: "Brand Assets", link: "/brand-assets" }
     ]
   },
 ];
@@ -42,15 +42,15 @@ const footers = [
 const legals = [
   { title: "Terms of Service", link: "/terms-of-service" },
   { title: "Privacy Policy", link: "/privacy-policy" },
-  { title: "Cookies", link: "#" },
-  { title: "Website Terms", link: "#" }
+  { title: "Cookies", link: "/cookies" },
+  { title: "Website Terms", link: "/website-terms" }
 ];
 
 const socials = [
-  { title: "Instagram", link: "/" },
-  { title: "TikTok", link: "/" },
-  { title: "Facebook", link: "/" },
-  { title: "LinkedIn", link: "/" }
+  { title: "Instagram", link: "https://instagram.com" },
+  { title: "TikTok", link: "https://tiktok.com" },
+  { title: "Facebook", link: "https://facebook.com" },
+  { title: "LinkedIn", link: "https://linkedin.com" }
 ];
 
 const TheFooter: React.FC = () => {

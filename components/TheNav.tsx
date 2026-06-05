@@ -13,23 +13,23 @@ import IconArrowUpRight from './IconArrowUpRight';
 
 // Data items
 const featureItems = [
-  { title: 'Verdict Engine', description: 'Real-time AI-powered decision system that moves beyond simple data.', icon: 'verdictengine-icon', link: '#' },
-  { title: 'Action Hub', description: 'One-click command center for quick budget boosts and manual adjustments.', icon: 'actionhub-icon', link: '#' },
-  { title: 'Scale Tracker', description: 'Full historical audit of every scaling decision and its marginal ROI impact.', icon: 'scaletracker-icon', link: '#' },
-  { title: 'Budget Revert', description: 'Instantly undo underperforming scales and restore previous budget levels.', icon: 'budgetrevert-icon', link: '#' },
+  { title: 'Verdict Engine', description: 'Real-time AI-powered decision system that moves beyond simple data.', icon: 'verdictengine-icon', link: '/features#feature-nav' },
+  { title: 'Action Hub', description: 'One-click command center for quick budget boosts and manual adjustments.', icon: 'actionhub-icon', link: '/features#feature-nav' },
+  { title: 'Scale Tracker', description: 'Full historical audit of every scaling decision and its marginal ROI impact.', icon: 'scaletracker-icon', link: '/features#feature-nav' },
+  { title: 'Budget Revert', description: 'Instantly undo underperforming scales and restore previous budget levels.', icon: 'budgetrevert-icon', link: '/features#feature-nav' },
 ];
 
 const solutionsItems = [
-  { title: "Make faster decisions", description: "Stop analyzing ads. Start acting on them.", image: "/img/faster-decisions.jpg", link: "#" },
-  { title: "Scale Winning Campaigns", description: "You have a winner. Now don't kill it, because winning is easy, scaling is hard.", image: "/img/scale-campaign.jpg", link: "#" },
-  { title: "Fix Underperforming Ads", description: "Get clear, actionable fixes for every underperforming campaign.", image: "/img/fix-ads.jpg", link: "#" },
-  { title: "Reduce Wasted Ad Spend", description: "You're losing money, but most of the time you just don't see it yet.", image: "/img/ad-spend.jpg", link: "#" }
+  { title: "Ambil Keputusan Lebih Cepat & Tepat", description: "Berhenti menganalisis iklan. Mulai bertindak dengan tepat.", image: "/img/faster-decisions.jpg", link: "/solutions#faster-decisions" },
+  { title: "Scale Kampanye Pemenang", description: "Anda punya winner. Jangan dibunuh karena salah scale.", image: "/img/scale-campaign.jpg", link: "/solutions#scale-winning" },
+  { title: "Perbaiki Iklan Boncos", description: "Dapatkan solusi instan untuk setiap kampanye yang menurun.", image: "/img/fix-ads.jpg", link: "/solutions#fix-underperforming" },
+  { title: "Kurangi Pemborosan Iklan", description: "Hentikan kebocoran anggaran yang tak terlihat sebelum kas terkuras.", image: "/img/ad-spend.jpg", link: "/solutions#reduce-wasted" }
 ];
 
 const resourceItems = [
-  { title: 'Blog', description: 'News and update about marketing, ad buying and ad management.', icon: 'blog-icon', link: '#' },
-  { title: 'Testimonials', description: 'How our users utilize ScalePilot to scale smarter.', icon: 'case-icon', link: '#' },
-  { title: 'Knowledge Center', description: 'Find answers to everything you need to know about ScalePilot.', icon: 'docs-icon', link: '#' }
+  { title: 'Blog', description: 'News and update about marketing, ad buying and ad management.', icon: 'blog-icon', link: '/blog' },
+  { title: 'Testimonials', description: 'How our users utilize ScalePilot to scale smarter.', icon: 'case-icon', link: '/testimonials' },
+  { title: 'Knowledge Center', description: 'Find answers to everything you need to know about ScalePilot.', icon: 'docs-icon', link: '/knowledge-center' }
 ];
 
 const TheNav: React.FC = () => {

@@ -54,7 +54,7 @@ export default function Home() {
                 Start scaling now
               </a>
               <a
-                href="#"
+                href="/features"
                 className="p-4 font-semibold border-x border-n20 text-n100 transition duration-200 hover:bg-n100 hover:border-n100 hover:text-white flex items-center"
               >
                 Explore features

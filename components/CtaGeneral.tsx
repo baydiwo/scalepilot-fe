@@ -50,7 +50,7 @@ const CtaGeneral: React.FC<CtaGeneralProps> = ({ theme = 'dark' }) => {
                 Pricing Plans
               </a>
               <a
-                href="#"
+                href="/features"
                 className="block px-8 py-3 font-semibold transition duration-200 hover:text-brand"
               >
                 Learn more &rarr;
