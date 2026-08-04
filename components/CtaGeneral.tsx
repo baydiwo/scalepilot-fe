@@ -44,10 +44,10 @@ const CtaGeneral: React.FC<CtaGeneralProps> = ({ theme = 'dark' }) => {
             </div>
             <div className="flex gap-2 mt-12">
               <a
-                href="/pricing"
+                href="https://app.scalepilot.id/login"
                 className="px-8 py-3 font-semibold border bg-brand text-n110 transition duration-200 hover:bg-white hover:text-n100"
               >
-                Pricing Plans
+                Get Started Now
               </a>
               <a
                 href="/features"

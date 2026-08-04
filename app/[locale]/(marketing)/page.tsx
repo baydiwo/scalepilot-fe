@@ -58,7 +58,7 @@ export default async function Home() {
 
             <div className="border border-n20 w-full flex items-stretch justify-center gap-6">
               <a
-                href="https://app.scalepilot.id"
+                href="https://app.scalepilot.id/login"
                 className="p-4 font-semibold border-x border-brand hover:border-x-n100 bg-brand text-n100 transition duration-200 hover:bg-n100 hover:text-brand flex items-center"
               >
                 {tHero('startScaling')}

@@ -172,7 +172,8 @@ const TheNav: React.FC = () => {
                   <IconGlobe className="w-5 h-5 text-n100" />
                   <span className="ml-1 text-xs font-semibold text-n100 uppercase">{locale}</span>
                 </button>
-                <Link href="/pricing" className="h-11 hover:bg-n100 hover:text-white px-5 py-2 text-sm lg:text-base font-semibold bg-brand text-n100 transition-all flex items-center">See Pricing &rarr;</Link>
+                <a href="https://app.scalepilot.id/login" className="h-11 hover:bg-n10 hover:text-n100 px-4 py-2 text-sm lg:text-base font-semibold text-n100 transition-all flex items-center">Log in</a>
+                <a href="https://app.scalepilot.id/login" className="h-11 hover:bg-n100 hover:text-white px-5 py-2 text-sm lg:text-base font-semibold bg-brand text-n100 transition-all flex items-center">Start Free &rarr;</a>
              </div>
              <button className="lg:hidden p-2 text-n100 focus:outline-none" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
                 {isMobileMenuOpen ? <IconClose className="size-6" /> : <IconMenu className="size-6" />}
@@ -479,9 +480,8 @@ const TheNav: React.FC = () => {
                     <Link href="/pricing" className="p-4 text-xl font-semibold text-n100 border-b border-n20">Pricing</Link>
 
                     <div className="px-4 mt-6 flex gap-4 pb-6 mb-20 border-b border-n20">
-                        {/* <button className="w-full h-14 bg-n5 text-n100 font-semibold border border-n20">Log in</button>
-                        <button className="w-full h-14 bg-brand text-n100 font-semibold">Start free</button> */}
-                        <Link href="/pricing" className="w-full h-14 bg-brand text-n100 font-semibold flex items-center justify-center">See Pricing &rarr;</Link>
+                        <a href="https://app.scalepilot.id/login" className="w-full h-14 bg-n5 text-n100 font-semibold border border-n20 flex items-center justify-center">Log in</a>
+                        <a href="https://app.scalepilot.id/login" className="w-full h-14 bg-brand text-n100 font-semibold flex items-center justify-center">Start free &rarr;</a>
                     </div>
                 </div>
              </div>

@@ -443,13 +443,13 @@ export default function PricingPage() {
                 </div>
                 <div className="h-2 border-t border-n20"></div>
                 <div className="border-y border-n20">
-                  <button className={`p-4 title text-base w-full text-left flex items-center justify-between group/action relative cursor-pointer border-none bg-transparent ${(plan.id === 'starter' || plan.id === 'growth') ? 'text-n100' : 'text-white lg:text-current lg:hover:text-white'}`}>
+                  <a href="https://app.scalepilot.id/login" className={`p-4 title text-base w-full text-left flex items-center justify-between group/action relative cursor-pointer ${(plan.id === 'starter' || plan.id === 'growth') ? 'text-n100' : 'text-white lg:text-current lg:hover:text-white'}`}>
                     <div className={`absolute w-full h-full lg:h-0.5 left-0 bottom-0 lg:group-hover/action:h-full transition-all duration-200 z-0 ${plan.color}`}></div>
                     <span className="relative z-10">{plan.cta}</span>
-                    <svg className="size-6 lg:opacity-0 lg:group-hover/action:opacity-100 lg:-translate-x-2 lg:group-hover/action:translate-x-0 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg className="size-6 lg:opacity-0 lg:group-hover/action:opacity-100 lg:-translate-x-2 lg:group-hover/action:translate-x-0 transition-all relative z-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
-                  </button>
+                  </a>
                 </div>
                 </div>
               );
@@ -492,9 +492,9 @@ export default function PricingPage() {
               ))}
             </div>
             <div>
-              <button className={`w-full py-4 title text-base transition-all duration-200 hover:brightness-110 active:scale-[0.98] cursor-pointer border-none ${pricingData[selectedComparePlan].color} ${(pricingData[selectedComparePlan].id === 'starter' || pricingData[selectedComparePlan].id === 'growth') ? 'text-n100' : 'text-white'}`}>
+              <a href="https://app.scalepilot.id/login" className={`w-full py-4 title text-base transition-all duration-200 hover:brightness-110 active:scale-[0.98] cursor-pointer flex items-center justify-center ${pricingData[selectedComparePlan].color} ${(pricingData[selectedComparePlan].id === 'starter' || pricingData[selectedComparePlan].id === 'growth') ? 'text-n100' : 'text-white'}`}>
                 Sign up for {pricingData[selectedComparePlan].name}
-              </button>
+              </a>
             </div>
           </div>
 
@@ -537,10 +537,10 @@ export default function PricingPage() {
             <div className="h-14 border-b border-r border-n20 diagonal-lines"></div>
             {pricingData.map(plan => (
               <div key={`cta-row-${plan.id}`} className="h-14 border-b border-r border-n20 flex items-stretch overflow-hidden">
-                <button className={`w-full h-full flex items-center justify-center title font-semibold transition-all duration-200 hover:brightness-115 active:brightness-90 cursor-pointer whitespace-nowrap px-2 relative group border-none bg-transparent ${(plan.id === 'starter' || plan.id === 'growth') ? 'text-n100' : 'hover:text-white'}`}>
+                <a href="https://app.scalepilot.id/login" className={`w-full h-full flex items-center justify-center title font-semibold transition-all duration-200 hover:brightness-115 active:brightness-90 cursor-pointer whitespace-nowrap px-2 relative group ${(plan.id === 'starter' || plan.id === 'growth') ? 'text-n100' : 'hover:text-white'}`}>
                   <div className={`absolute w-full h-0.5 bottom-0 group-hover:h-full transition-all duration-200 z-0 ${plan.color}`}></div>
                   <span className="relative z-10">Sign up for {plan.name}</span>
-                </button>
+                </a>
               </div>
             ))}
           </div>

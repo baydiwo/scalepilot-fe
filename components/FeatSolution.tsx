@@ -18,7 +18,7 @@ const FeatSolution: React.FC = () => {
     ctaText: t(`${key}.ctaText`),
     icon: ['/img/verdictengine-icon.svg', '/img/actionhub-icon.svg', '/img/scaletracker-icon.svg', '/img/budgetrevert-icon.svg'][idx],
     image: ['/img/tab-verdict-engine.png', '/img/tab-action-hub.png', '/img/tab-scale-tracker.png', '/img/tab-budget-revert.png'][idx],
-    link: '#'
+    link: 'https://app.scalepilot.id/login'
   }));
 
   const [featSelected, setFeatSelected] = useState(0);

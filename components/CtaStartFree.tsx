@@ -15,9 +15,12 @@ const CtaStartFree: React.FC = () => {
               Start optimize your profit. Get started free today.
             </span>
           </div>
-          <button className="px-8 py-3 bg-n110 text-xl font-semibold text-brand transition duration-200 hover:scale-105 cursor-pointer hover:shadow-n110/75 shadow-2xl shadow-transparent">
+          <a
+            href="https://app.scalepilot.id/login"
+            className="px-8 py-3 bg-n110 text-xl font-semibold text-brand transition duration-200 hover:scale-105 cursor-pointer hover:shadow-n110/75 shadow-2xl shadow-transparent inline-flex items-center justify-center"
+          >
             Sign up free
-          </button>
+          </a>
         </div>
       </div>
     </section>

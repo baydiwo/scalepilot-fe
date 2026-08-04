@@ -51,7 +51,7 @@ const SolList: React.FC = () => {
                </div>
                
                <div className="mt-8 pt-8 border-t border-n20">
-                  <a href="#" className="inline-flex items-center justify-center bg-brand hover:bg-brand-dark text-white font-bold py-4 px-8 rounded-full transition-colors duration-200">
+                  <a href="https://app.scalepilot.id/login" className="inline-flex items-center justify-center bg-brand hover:bg-brand-dark text-white font-bold py-4 px-8 rounded-full transition-colors duration-200">
                     {item.cta}
                   </a>
                </div>
